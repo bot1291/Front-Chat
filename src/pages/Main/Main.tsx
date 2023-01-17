@@ -2,7 +2,7 @@ import styles from './Main.module.scss';
 import { MainProps } from './Main.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { Search } from '../../components';
+import { Search, Hamburger } from '../../components';
 
 export const Main: FC<MainProps> = ({ className, ...props }) => {
 	return (
@@ -11,6 +11,7 @@ export const Main: FC<MainProps> = ({ className, ...props }) => {
 			className={cn(className, styles.categories)}
 			{...props}>
 			<Search />
+			<Hamburger />
 		</div>
 	);
 };
