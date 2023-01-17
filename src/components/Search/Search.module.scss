@@ -1,0 +1,21 @@
+@import '../../styles/variables';
+
+.wrapper {
+	position: relative;
+}
+
+.loop {
+	position: absolute;
+	z-index: 1;
+	top: 33%;
+	left: 16px;
+}
+
+.search {
+	padding: 11px 0 11px 40px;
+	border-radius: 15px;
+	border: unset;
+	background-color: $main;
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+	position: relative;
+}

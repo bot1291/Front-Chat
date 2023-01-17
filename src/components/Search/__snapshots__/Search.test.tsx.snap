@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoriesSkeleton Should follow the structuce 1`] = `
+<div
+  class="wrapper"
+  data-testid="input-wrapper"
+>
+  <loop.svg
+    class="loop"
+  />
+  <input
+    class="search"
+    data-testid="search"
+    placeholder="Поиск..."
+    value=""
+  />
+</div>
+`;
