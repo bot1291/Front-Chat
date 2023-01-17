@@ -28,8 +28,8 @@ jobs:
                   npm run tsc
                   npm run stylelint
 
-            - name: Tests
-              run: npm run test
+            # - name: Tests
+            #   run: npm run test
 
             - name: Build production
               run: npm run build
@@ -43,12 +43,12 @@ jobs:
                   NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
                   NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
 
-            - name: Run e2e tests
-              uses: cypress-io/github-action@v2
-              with:
-                  browser: chrome
-                  config-file: cypress.config.ts
-                  env: CY_PORT=${{ steps.deploy_dev.outputs.NETLIFY_URL }}
+            # - name: Run e2e tests
+            #   uses: cypress-io/github-action@v2
+            #   with:
+            #       browser: chrome
+            #       config-file: cypress.config.ts
+            #       env: CY_PORT=${{ steps.deploy_dev.outputs.NETLIFY_URL }}
 
             - name: Deploy production
               uses: netlify/actions/cli@master

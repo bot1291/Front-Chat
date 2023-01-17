@@ -9,7 +9,7 @@ export const fetchPizzas = createAsyncThunk(
 				'https://reactpizzas.ru:5000/api/pizzas'
 			);
 
-			return;
+			return response;
 		} catch (error) {
 			if (error instanceof Error) {
 				return thunkAPI.rejectWithValue(error);
