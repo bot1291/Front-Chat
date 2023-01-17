@@ -13,9 +13,9 @@ html {
 }
 
 body {
-	color: $black;
+	color: $text-main;
 	font-weight: 400;
-	background-color: $background;
+	background-color: $main;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 }
@@ -30,7 +30,7 @@ h3,
 h4,
 h5,
 button {
-	color: $black;
+	color: $text-name;
 }
 
 button {
