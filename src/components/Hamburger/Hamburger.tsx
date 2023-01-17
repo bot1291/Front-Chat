@@ -7,7 +7,9 @@ import HambIcon from './hamb.svg';
 export const Hamburger: FC<HamburgerProps> = ({ className, ...props }) => {
 	return (
 		<div className={cn(className, styles.hamburger)} {...props}>
-			<HambIcon />
+			<button className={styles.button}>
+				<HambIcon />
+			</button>
 		</div>
 	);
 };

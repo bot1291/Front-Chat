@@ -3,7 +3,13 @@ import { DialogProps } from './Dialog.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
 
-export const Dialog: FC<DialogProps> = ({ className, ...props }) => {
+export const Dialog: FC<DialogProps> = ({
+	avatar,
+	lastMes = 'test',
+	name = 'Name',
+	className,
+	...props
+}) => {
 	const [isChosen, setIsChosen] = useState<boolean>(false);
 
 	return (
@@ -15,10 +21,10 @@ export const Dialog: FC<DialogProps> = ({ className, ...props }) => {
 			<button
 				onClick={() => setIsChosen(!isChosen)}
 				className={styles.button}>
-				<img src="" alt="Avatar" className={styles.avatar} />
+				<img src={avatar} alt="Avatar" className={styles.avatar} />
 				<div className={styles.author}>
-					<span className={styles.name}>Name</span>
-					<span className={styles.lastMes}>Last mes</span>
+					<span className={styles.name}>{name}</span>
+					<span className={styles.lastMes}>{lastMes}</span>
 				</div>
 				<span className={styles.date}>17.01.2023</span>
 			</button>
