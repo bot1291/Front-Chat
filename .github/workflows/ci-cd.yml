@@ -1,0 +1,59 @@
+name: 'Checker for errors'
+
+on:
+    push:
+        branches:
+            - 'main'
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout perository
+              uses: actions/checkout@v3
+
+            - name: Setup node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '16'
+                  cache: npm
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Formatting and linting
+              run: |
+                  npm run format
+                  npm run eslint
+                  npm run tsc
+                  npm run stylelint
+
+            - name: Tests
+              run: npm run test
+
+            - name: Build production
+              run: npm run build
+
+            - name: Deploy development
+              id: deploy_dev
+              uses: netlify/actions/cli@master
+              with:
+                  args: deploy --dir=build
+              env:
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+
+            - name: Run e2e tests
+              uses: cypress-io/github-action@v2
+              with:
+                  browser: chrome
+                  config-file: cypress.config.ts
+                  env: CY_PORT=${{ steps.deploy_dev.outputs.NETLIFY_URL }}
+
+            - name: Deploy production
+              uses: netlify/actions/cli@master
+              with:
+                  args: deploy --dir=build --prod
+              env:
+                  NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+                  NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
