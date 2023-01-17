@@ -1,0 +1,34 @@
+@import '../../styles/variables';
+
+.MainMenu {
+	padding: 15px 47px 10px 47px;
+	background-color: $add;
+	height: 100vh;
+}
+
+.searchAndMenu {
+	display: flex;
+	padding: 0 16px 25px 16px;
+	background-color: $add;
+}
+
+.search {
+	margin-left: 14px;
+}
+
+.dialogs {
+	overflow-y: scroll;
+	height: inherit;
+	&::-webkit-scrollbar {
+		width: 7px;
+		background-color: unset;
+	}
+	&::-webkit-scrollbar-thumb {
+		width: 10px;
+		border-radius: 10px;
+		background-color: #b3b1b1;
+	}
+	> div + div {
+		margin-top: 20px;
+	}
+}

@@ -12,15 +12,17 @@ export const Search: FC<SearchProps> = ({
 	const [value, setValue] = useState<string>('');
 
 	return (
-		<div data-testid="input-wrapper" className={styles.wrapper}>
+		<div
+			data-testid="input-wrapper"
+			className={cn(styles.wrapper, className)}
+			{...props}>
 			<LoopIcon className={styles.loop} />
 			<input
 				data-testid="search"
 				placeholder={text}
 				onChange={(e) => setValue(e.currentTarget.value)}
 				value={value}
-				className={cn(className, styles.search)}
-				{...props}
+				className={cn(styles.search)}
 			/>
 		</div>
 	);
