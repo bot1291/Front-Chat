@@ -1,0 +1,58 @@
+@import '../../styles/variables';
+
+.dialog {
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+	background-color: $message;
+	transition: all 0.3s;
+	border-radius: 10px;
+	&:hover {
+		background-color: $hover;
+	}
+}
+
+.button {
+	padding: 15px 20px 15px 20px;
+	display: flex;
+	cursor: pointer;
+	width: 100%;
+}
+
+.avatar {
+	width: 39px;
+	height: 39px;
+	background-color: $white;
+	border-radius: 50%;
+	margin-right: 13px;
+}
+
+.author {
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	margin-right: 10px;
+}
+
+.lastMes {
+	color: $text-add;
+	white-space: nowrap;
+}
+
+.date {
+	margin-left: auto;
+	color: $text-add;
+}
+
+.chosen {
+	background-color: $active;
+	&:hover {
+		background-color: $active;
+	}
+
+	.lastMes {
+		color: $text-name;
+	}
+
+	.date {
+		color: $text-name;
+	}
+}

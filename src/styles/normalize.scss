@@ -15,6 +15,9 @@ html {
 body {
 	color: $text-main;
 	font-weight: 400;
+	font-size: 16px;
+	line-height: 19px;
+	font-weight: 400;
 	background-color: $main;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
@@ -44,7 +47,7 @@ h1 {
 
 h2 {
 	font-weight: 600;
-	font-size: 28px;
+	font-size: 16px;
 	line-height: 30px;
 }
 
