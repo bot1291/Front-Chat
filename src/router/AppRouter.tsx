@@ -7,7 +7,7 @@ export const AppRouter: FC = () => {
 	return (
 		<Routes>
 			<Route path="/" element={<MainLayout />}>
-				<Route index element={'Main'} />
+				<Route index element={'Test'} />
 				<Route path="/*" element={<NotFound />} />
 				<Route path="/example" element={'Example'} />
 			</Route>

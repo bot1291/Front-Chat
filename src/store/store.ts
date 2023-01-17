@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import exampleReducer from './slices/PizzasSlice/ExampleSlice';
+import exampleReducer from './slices/ExampleSlice/ExampleSlice';
+import testReducer from './slices/TestSlice/TestSlice';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const createReduxStore = (initialState = {}) => {
 	return configureStore({
 		reducer: {
 			exampleReducer,
+			testReducer,
 		},
 		preloadedState: initialState,
 	});
