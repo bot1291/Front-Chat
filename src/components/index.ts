@@ -8,3 +8,4 @@ export * from './Setting/Setting';
 export * from './Message/Message';
 export * from './Interactions/Interactions';
 export * from './WindowDialog/WindowDialog';
+export * from './Input/Input';

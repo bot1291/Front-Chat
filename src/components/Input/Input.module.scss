@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.Input {
+	padding: 9px 9px 9px 26px;
+	color: $text-main;
+	color: $text-main;
+	border-radius: 5px;
+	border: 1px solid #442f2f;
+	&::placeholder {
+		color: $text-add;
+	}
+}
