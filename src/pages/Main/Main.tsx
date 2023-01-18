@@ -2,7 +2,7 @@ import styles from './Main.module.scss';
 import { MainProps } from './Main.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { MainMenu } from '../../components';
+import { MainMenu, WindowDialog } from '../../components';
 
 export const Main: FC<MainProps> = ({ className, ...props }) => {
 	return (
@@ -10,7 +10,8 @@ export const Main: FC<MainProps> = ({ className, ...props }) => {
 			data-testid="wrapper"
 			className={cn(className, styles.wrapper)}
 			{...props}>
-			<MainMenu />
+			<MainMenu className={styles.menu} />
+			<WindowDialog />
 		</div>
 	);
 };

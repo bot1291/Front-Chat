@@ -52,6 +52,12 @@ export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
 					[styles.opened]: isOpened,
 				})}
 			/>
+			<button
+				onClick={() => setIsOpened(!isOpened)}
+				className={cn(styles.dimmer, {
+					[styles.dimmerOpened]: isOpened,
+				})}
+			/>
 			<div className={styles.searchAndMenu}>
 				<Hamburger onClick={() => setIsOpened(!isOpened)} />
 				<Search className={styles.search} />

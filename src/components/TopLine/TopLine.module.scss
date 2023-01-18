@@ -1,35 +1,33 @@
 @import '../../styles/variables';
 
 .TopLine {
-	background-color: $add;
 	padding: 19px 0 19px 20px;
+	background-color: $add;
 }
 
 .user {
 	display: flex;
 	align-items: flex-end;
-	padding-bottom: 25px;
-	margin-bottom: 25px;
 }
 
 .avatarWrapper {
+	position: relative;
 	width: 39px;
 	height: 39px;
-	position: relative;
-	border-radius: 50%;
 	margin-right: 15px;
 	background-color: white;
-	box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+	border-radius: 50%;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 15%);
 }
 
 .avatar {
-	width: 39px;
-	height: 39px;
 	position: absolute;
 	top: 0;
 	left: 0;
-	border-radius: 50%;
+	width: 39px;
+	height: 39px;
 	background-color: $white;
+	border-radius: 50%;
 }
 
 .firstLetter {
@@ -51,15 +49,16 @@
 .offline {
 	position: relative;
 	padding-left: 15px;
-	&:before {
-		content: '';
+
+	&::before {
 		position: absolute;
+		top: 50%;
+		left: 0;
 		width: 8px;
 		height: 8px;
 		background-color: red;
 		border-radius: 50%;
-		left: 0px;
-		top: 50%;
 		transform: translate(0, -50%);
+		content: '';
 	}
 }

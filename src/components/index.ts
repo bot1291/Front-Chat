@@ -7,3 +7,4 @@ export * from './Settings/Settings';
 export * from './Setting/Setting';
 export * from './Message/Message';
 export * from './Interactions/Interactions';
+export * from './WindowDialog/WindowDialog';

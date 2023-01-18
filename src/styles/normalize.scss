@@ -13,15 +13,14 @@ html {
 }
 
 body {
+	overflow: hidden;
 	color: $text-main;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 19px;
-	font-weight: 400;
 	background-color: $main;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	overflow: hidden;
 }
 
 a,

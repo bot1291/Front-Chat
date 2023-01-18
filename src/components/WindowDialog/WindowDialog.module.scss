@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.WindowDialog {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 100%;
+	height: 100vh;
+	background-color: $main;
+}
+
+.dialogs {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	margin: auto 0 0 8px;
+	padding-right: 8px;
+	padding-bottom: 8px;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	&::-webkit-scrollbar {
+		width: 7px;
+		background-color: unset;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		width: 10px;
+		background-color: #b3b1b1;
+		border-radius: 10px;
+	}
+}
+
+.his {
+	align-self: flex-start;
+}
+
+.your {
+	align-self: flex-end;
+}

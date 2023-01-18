@@ -6,16 +6,16 @@
 }
 
 .icon {
-	border-radius: 10px;
+	position: relative;
 	width: 25px;
 	height: 25px;
-	position: relative;
 	margin-right: 15px;
+	border-radius: 10px;
 
 	svg {
 		position: absolute;
-		left: 50%;
 		top: 50%;
+		left: 50%;
 		transform: translate(-50%, -50%);
 	}
 }

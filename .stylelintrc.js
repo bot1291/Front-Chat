@@ -11,7 +11,7 @@ module.exports = {
 		'string-quotes': 'single',
 		'selector-class-pattern': null,
 		'declaration-block-no-redundant-longhand-properties': null,
-		'color-function-notation': 'legacy',
+		'color-function-notation': null,
 		'import-notation': 'string',
 		'function-no-unknown': null,
 		'no-descending-specificity': null,

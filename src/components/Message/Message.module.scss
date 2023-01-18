@@ -1,22 +1,21 @@
 @import '../../styles/variables';
 
 .Message {
-	padding: 10px 15px 5px 15px;
-	border-radius: 10px;
-	margin: 100px;
 	position: relative;
+	padding: 10px 15px 5px;
+	border-radius: 10px;
 }
 
 .his {
 	background-color: $message;
 	border-bottom-left-radius: 0;
-	box-shadow: 5px 3px 5px rgb(84 81 81 / 15%);
+	box-shadow: 5px 3px 5px rgba(84, 81, 81, 15%);
 }
 
 .your {
 	background-color: $active;
 	border-bottom-right-radius: 0;
-	box-shadow: -4px 3px 5px rgb(84 81 81 / 15%);
+	box-shadow: -4px 3px 5px rgba(84, 81, 81, 15%);
 }
 
 .content {
@@ -24,9 +23,9 @@
 }
 
 .data {
+	margin-left: 10px;
 	color: $text-add;
 	font-size: 13px;
-	margin-left: 10px;
 }
 
 .angle {

@@ -1,7 +1,9 @@
 @import '../../styles/variables';
 
 .wrapper {
-	> * + * {
-		margin: 20px;
-	}
+	display: flex;
+}
+
+.menu {
+	border-right: 1px solid $border;
 }
