@@ -6,6 +6,10 @@
 	align-items: center;
 	padding: 20px 23px;
 	background-color: $add;
+	transition: all 0.5s;
+	&:hover {
+		box-shadow: inset 0 3px 10px rgba(0, 0, 0, 10%);
+	}
 }
 
 .paperClip {
@@ -22,7 +26,13 @@
 	background-color: $add;
 	border: unset;
 	&::placeholder {
+		transition: all 0.3s;
 		color: $text-add;
+	}
+	&:focus {
+		&::placeholder {
+			color: darken($color: $text-add, $amount: 25%);
+		}
 	}
 }
 

@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 import { Input } from '../../components';
 import { Button } from 'antd';
+import { IoIosLogIn } from 'react-icons/io';
 
 export const Authorization: FC<AuthorizationProps> = ({
 	className,
@@ -23,7 +24,9 @@ export const Authorization: FC<AuthorizationProps> = ({
 				<Input className={styles.input} placeholder="Ваша почта" />
 				<Input className={styles.input} placeholder="Ваша пароль" />
 			</div>
-			<Button className={styles.button}>Войти в аккаунт</Button>
+			<Button icon={<IoIosLogIn />} className={styles.button}>
+				Войти в аккаунт
+			</Button>
 			<button className={styles.registr}>Зарегистрироваться</button>
 		</div>
 	);
