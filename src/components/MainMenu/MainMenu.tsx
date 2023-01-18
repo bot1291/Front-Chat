@@ -5,18 +5,41 @@ import { FC } from 'react';
 import { Dialog, Hamburger, Search } from '..';
 
 const dialogs = [
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
-	{ name: 'Ivan', avatar: '', lastMes: 'I like...' },
+	{
+		name: 'Artem',
+		avatar: { img: '', color: 'white' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Petr',
+		avatar: { img: '', color: 'blue' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Madzhahet',
+		avatar: { img: '', color: 'pink' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'corall' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'white' },
+		lastMes: 'I like...',
+	},
+	{
+		name: 'Igor',
+		avatar: { img: '', color: 'white' },
+		lastMes: 'I like...',
+	},
 ];
 
 export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {

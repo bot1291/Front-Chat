@@ -21,7 +21,23 @@ export const Dialog: FC<DialogProps> = ({
 			<button
 				onClick={() => setIsChosen(!isChosen)}
 				className={styles.button}>
-				<img src={avatar} alt="Avatar" className={styles.avatar} />
+				<div
+					style={{
+						backgroundColor: avatar.img ? undefined : avatar.color,
+					}}
+					className={styles.avatarWrapper}>
+					{avatar.img ? (
+						<img
+							src={avatar.img}
+							alt="Avatar"
+							className={styles.avatar}
+						/>
+					) : (
+						<span className={styles.firstLetter}>
+							{name[0]?.toUpperCase()}
+						</span>
+					)}
+				</div>
 				<div className={styles.author}>
 					<span className={styles.name}>{name}</span>
 					<span className={styles.lastMes}>{lastMes}</span>
