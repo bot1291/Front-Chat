@@ -1,0 +1,70 @@
+@import '../../styles/variables';
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 100vh;
+
+	.button {
+		margin-top: 30px;
+
+		span {
+			color: $text-main;
+		}
+
+		padding: 0 44px;
+		margin-bottom: 20px;
+		font-size: 16px;
+		background-color: $active;
+		&:active {
+			color: $add;
+			border-color: $hover;
+		}
+		&:hover {
+			border-color: $text-name;
+		}
+	}
+}
+
+.welcome {
+	font-size: 20px;
+	margin-bottom: 10px;
+	color: $text-main;
+}
+
+.text {
+	color: $text-add;
+	margin-bottom: 30px;
+}
+
+.inputs {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	& > input + input {
+		margin-top: 24px;
+	}
+}
+
+.question {
+	position: absolute;
+	font-size: 11px;
+	color: $text-add;
+	white-space: nowrap;
+	top: -16px;
+	left: 16px;
+	cursor: pointer;
+}
+
+.input {
+	min-width: 274px;
+}
+
+.registr {
+	font-size: 14px;
+	cursor: pointer;
+	color: $text-add;
+}

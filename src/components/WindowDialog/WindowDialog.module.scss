@@ -19,16 +19,21 @@
 	padding-bottom: 8px;
 	overflow-x: hidden;
 	overflow-y: scroll;
+	&:hover {
+		&::-webkit-scrollbar {
+			width: 7px;
+			background-color: unset;
+		}
 
+		&::-webkit-scrollbar-thumb {
+			width: 10px;
+			background-color: #b3b1b1;
+			border-radius: 10px;
+		}
+	}
 	&::-webkit-scrollbar {
 		width: 7px;
 		background-color: unset;
-	}
-
-	&::-webkit-scrollbar-thumb {
-		width: 10px;
-		background-color: #b3b1b1;
-		border-radius: 10px;
 	}
 }
 

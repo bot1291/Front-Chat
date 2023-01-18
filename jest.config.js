@@ -11,4 +11,7 @@ module.exports = {
 			'<rootDir>/fileTransformer.js',
 		'^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
 	},
+	transformIgnorePatterns: [
+		'/node_modules/(?!antd|@ant-design|rc-.+?|@babel/runtime).+(js|jsx)$',
+	],
 };
