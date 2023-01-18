@@ -1,0 +1,39 @@
+@import '../../styles/variables';
+
+.Interactions {
+	padding: 26px 23px 26px 23px;
+	background-color: $add;
+	display: grid;
+	align-items: center;
+	grid-template-columns: auto 1fr auto auto;
+}
+
+.paperClip {
+	margin-right: 22px;
+	width: 29px;
+	height: 29px;
+	cursor: pointer;
+}
+
+.input {
+	font-size: 20px;
+	color: $text-main;
+	margin-right: 22px;
+	border: unset;
+	background-color: $add;
+	&::-webkit-input-placeholder {
+		color: $text-add;
+	}
+	&::-moz-placeholder {
+		color: $text-add;
+	}
+}
+
+.smile {
+	margin-right: 22px;
+	cursor: pointer;
+}
+
+.micro {
+	cursor: pointer;
+}
