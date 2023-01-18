@@ -2,6 +2,7 @@ import styles from './Dialog.module.scss';
 import { DialogProps } from './Dialog.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
+import Button from '@mui/material/Button';
 
 export const Dialog: FC<DialogProps> = ({
 	avatar,
@@ -18,7 +19,7 @@ export const Dialog: FC<DialogProps> = ({
 				[styles.chosen]: isChosen,
 			})}
 			{...props}>
-			<button
+			<Button
 				onClick={() => setIsChosen(!isChosen)}
 				className={styles.button}>
 				<div
@@ -43,7 +44,7 @@ export const Dialog: FC<DialogProps> = ({
 					<span className={styles.lastMes}>{lastMes}</span>
 				</div>
 				<span className={styles.date}>17.01.2023</span>
-			</button>
+			</Button>
 		</div>
 	);
 };
