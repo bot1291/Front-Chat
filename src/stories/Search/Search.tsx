@@ -4,11 +4,7 @@ import cn from 'classnames';
 import { FC, useState } from 'react';
 import LoopIcon from './loop.svg';
 
-export const Search: FC<SearchProps> = ({
-	text = 'Поиск...',
-	className,
-	...props
-}) => {
+export const Search: FC<SearchProps> = ({ text = 'Поиск...', ...props }) => {
 	const [value, setValue] = useState<string>('');
 
 	return (
@@ -19,7 +15,7 @@ export const Search: FC<SearchProps> = ({
 				placeholder={text}
 				onChange={(e) => setValue(e.currentTarget.value)}
 				value={value}
-				className={cn(className, styles.search)}
+				className={cn(styles.search)}
 				{...props}
 			/>
 		</div>

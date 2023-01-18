@@ -1,0 +1,44 @@
+@import '../../styles/variables';
+
+.Message {
+	padding: 10px 15px 5px 15px;
+	border-radius: 10px;
+	margin: 100px;
+	position: relative;
+}
+
+.his {
+	background-color: $message;
+	border-bottom-left-radius: 0;
+	box-shadow: 5px 3px 5px rgb(84 81 81 / 15%);
+}
+
+.your {
+	background-color: $active;
+	border-bottom-right-radius: 0;
+	box-shadow: -4px 3px 5px rgb(84 81 81 / 15%);
+}
+
+.content {
+	color: $text-main;
+}
+
+.data {
+	color: $text-add;
+	font-size: 13px;
+	margin-left: 10px;
+}
+
+.angle {
+	position: absolute;
+	top: 17.8px;
+	z-index: -1;
+}
+
+.angleYour {
+	right: -12px;
+}
+
+.angleHis {
+	left: -12px;
+}

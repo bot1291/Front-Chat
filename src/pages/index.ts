@@ -1,1 +1,1 @@
-export * from './NotFound/NotFound';
+export * from './Main/Main';
