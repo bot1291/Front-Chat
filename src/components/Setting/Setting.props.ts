@@ -1,7 +1,11 @@
 import { DetailedHTMLProps, ButtonHTMLAttributes } from 'react';
 
-export interface HamburgerProps
+export interface SettingProps
 	extends DetailedHTMLProps<
 		ButtonHTMLAttributes<HTMLButtonElement>,
 		HTMLButtonElement
-	> {}
+	> {
+	icon: JSX.Element;
+	color: string;
+	string: string;
+}

@@ -1,8 +1,8 @@
 import styles from './MainMenu.module.scss';
 import { MainMenuProps } from './MainMenu.props';
 import cn from 'classnames';
-import { FC } from 'react';
-import { Dialog, Hamburger, Search } from '..';
+import { FC, useState } from 'react';
+import { Dialog, Hamburger, Search, Settings } from '..';
 
 const dialogs = [
 	{
@@ -43,10 +43,17 @@ const dialogs = [
 ];
 
 export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
+	const [isOpened, setIsOpened] = useState<boolean>(false);
+
 	return (
 		<div className={cn(className, styles.MainMenu)} {...props}>
+			<Settings
+				className={cn(styles.settings, {
+					[styles.opened]: isOpened,
+				})}
+			/>
 			<div className={styles.searchAndMenu}>
-				<Hamburger />
+				<Hamburger onClick={() => setIsOpened(!isOpened)} />
 				<Search className={styles.search} />
 			</div>
 			<div className={styles.dialogs}>
