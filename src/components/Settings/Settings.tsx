@@ -8,6 +8,7 @@ import CloudIcon from './cloud.svg';
 export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 	const avatar = { img: '', color: 'yellow' };
 	const name = 'Igor';
+
 	return (
 		<div className={cn(className, styles.Settings)} {...props}>
 			<div className={styles.user}>
