@@ -17,12 +17,12 @@ export const Authorization: FC<AuthorizationProps> = ({
 			<h1 className={styles.welcome}>Добро пожаловать!</h1>
 			<span className={styles.text}>
 				Пожалуйста, войдите в аккаунт{' '}
-				<Link to="/registration" className={styles.question}>
+				<Link to="/reg" className={styles.question}>
 					Не зарегистрированы?
 				</Link>
 			</span>
 			<FormLogin />
-			<Link to="/registration" className={styles.registr}>
+			<Link to="/reg" className={styles.registr}>
 				Зарегистрироваться
 			</Link>
 		</div>

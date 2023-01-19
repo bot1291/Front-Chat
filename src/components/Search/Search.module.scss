@@ -28,7 +28,7 @@
 	}
 	&:hover {
 		&::placeholder {
-			color: darken($color: $text-add, $amount: 25%);
+			color: darken($color: $text-add, $amount: 15%);
 		}
 		box-shadow: 0 3px 15px rgba(0, 0, 0, 25%);
 	}

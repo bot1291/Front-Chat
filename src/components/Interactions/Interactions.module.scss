@@ -3,7 +3,7 @@
 .Interactions {
 	display: grid;
 	grid-template-columns: auto 1fr auto auto;
-	align-items: center;
+	align-items: flex-end;
 	padding: 20px 23px;
 	background-color: $add;
 	transition: all 0.5s;
@@ -30,22 +30,17 @@
 		transition: all 0.3s;
 		color: $text-add;
 	}
-	&:focus {
-		&::placeholder {
-			color: darken($color: $text-add, $amount: 25%);
-		}
-	}
 	&:hover {
-		&::-webkit-scrollbar {
-			width: 7px;
-			background-color: unset;
-		}
-		&::-webkit-scrollbar-thumb {
-			width: 10px;
-			background-color: #b3b1b1;
-			border-radius: 10px;
+		&::placeholder {
+			color: darken($color: $text-add, $amount: 15%);
 		}
 	}
+	&::-webkit-scrollbar-thumb {
+		width: 10px;
+		background-color: #b3b1b1;
+		border-radius: 10px;
+	}
+
 	&::-webkit-scrollbar {
 		width: 7px;
 	}

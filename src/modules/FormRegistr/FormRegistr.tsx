@@ -17,97 +17,116 @@ export const FormRegistr: FC<FormRegistrProps> = ({
 	isSubmited,
 	className,
 }) => {
-	return !isSubmited ? (
-		<Form className={cn(styles.FormRegistr, className)}>
-			<Form.Item
-				name="email"
-				rules={[
-					{
-						type: 'email',
-						message: 'Неверный формат почты!',
-					},
-					{
-						required: true,
-						message: 'Пожалуйста, напишите почту!',
-					},
-				]}>
-				<Input
-					prefix={<MailOutlined className="site-form-item-icon" />}
-					className={styles.input}
-					placeholder="Почта"
-				/>
-			</Form.Item>
-			<Form.Item
-				name="nickname"
-				rules={[
-					{
-						required: true,
-						message: 'Please input your nickname!',
-						whitespace: true,
-					},
-				]}>
-				<Input
-					prefix={<UserAddOutlined className="site-form-item-icon" />}
-					className={styles.input}
-					placeholder="Ваше имя"
-				/>
-			</Form.Item>
-			<Form.Item
-				name="password"
-				rules={[
-					{
-						required: true,
-						message: 'Пожалуйста, напишите пароль!',
-					},
-				]}>
-				<Input.Password
-					prefix={<LockOutlined className="site-form-item-icon" />}
-					className={styles.input}
-					placeholder="Пароль"
-				/>
-			</Form.Item>
-			<Form.Item
-				name="confirm"
-				dependencies={['password']}
-				hasFeedback
-				rules={[
-					{
-						required: true,
-						message: 'Пожалуйста, подтвердите пароль!',
-					},
-					({ getFieldValue }) => ({
-						validator(_, value) {
-							if (!value || getFieldValue('password') === value) {
-								return Promise.resolve();
-							}
-							return Promise.reject(
-								new Error('Пароли не совпадают!')
-							);
+	return (
+		<>
+			<Form
+				className={cn(styles.FormRegistr, className, {
+					[styles.visible]: !isSubmited,
+				})}>
+				<Form.Item
+					name="email"
+					rules={[
+						{
+							type: 'email',
+							message: 'Неверный формат почты!',
 						},
-					}),
-				]}>
-				<Input.Password
-					prefix={<LockOutlined className="site-form-item-icon" />}
-					className={styles.input}
-					placeholder="Повторите пароль"
-				/>
-			</Form.Item>
-			<Button
-				onClick={() => setItSubmited(!isSubmited)}
-				htmlType="submit"
-				icon={<IoIosLogIn />}
-				className={styles.button}>
-				Зарегистрироваться
-			</Button>
-		</Form>
-	) : (
-		<div className={styles.approve}>
-			<CheckCircleTwoTone className={styles.check} />
-			<p>Подтвердите почту</p>
-			<span>
-				На Вашу почту отправлено письмо с ссылкой на подтверждение
-				аккаунта
-			</span>
-		</div>
+						{
+							required: true,
+							message: 'Пожалуйста, напишите почту!',
+						},
+					]}>
+					<Input
+						prefix={
+							<MailOutlined className="site-form-item-icon" />
+						}
+						className={styles.input}
+						placeholder="Почта"
+					/>
+				</Form.Item>
+				<Form.Item
+					name="nickname"
+					rules={[
+						{
+							required: true,
+							message: 'Please input your nickname!',
+							whitespace: true,
+						},
+					]}>
+					<Input
+						prefix={
+							<UserAddOutlined className="site-form-item-icon" />
+						}
+						className={styles.input}
+						placeholder="Ваше имя"
+					/>
+				</Form.Item>
+				<Form.Item
+					name="password"
+					rules={[
+						{
+							required: true,
+							message: 'Пожалуйста, напишите пароль!',
+						},
+					]}>
+					<Input.Password
+						prefix={
+							<LockOutlined className="site-form-item-icon" />
+						}
+						className={styles.input}
+						placeholder="Пароль"
+					/>
+				</Form.Item>
+				<Form.Item
+					name="confirm"
+					dependencies={['password']}
+					hasFeedback
+					rules={[
+						{
+							required: true,
+							message: 'Пожалуйста, подтвердите пароль!',
+						},
+						({ getFieldValue }) => ({
+							validator(_, value) {
+								if (
+									!value ||
+									getFieldValue('password') === value
+								) {
+									return Promise.resolve();
+								}
+								return Promise.reject(
+									new Error('Пароли не совпадают!')
+								);
+							},
+						}),
+					]}>
+					<Input.Password
+						prefix={
+							<LockOutlined className="site-form-item-icon" />
+						}
+						className={styles.input}
+						placeholder="Повторите пароль"
+					/>
+				</Form.Item>
+				<Button
+					onClick={() => setItSubmited(!isSubmited)}
+					htmlType="submit"
+					icon={<IoIosLogIn />}
+					className={styles.button}>
+					Зарегистрироваться
+				</Button>
+			</Form>
+
+			<div
+				className={cn(styles.approve, {
+					[styles.visible]: isSubmited,
+				})}>
+				<CheckCircleTwoTone className={styles.check} />
+				<p>Подтвердите почту</p>
+				<span>
+					На Вашу почту отправлено письмо с ссылкой на подтверждение
+					аккаунта
+				</span>
+			</div>
+		</>
 	);
 };
