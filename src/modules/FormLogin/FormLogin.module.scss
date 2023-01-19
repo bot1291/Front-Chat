@@ -1,0 +1,66 @@
+@import '../../styles/variables';
+
+.formLogin {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	& > div + div {
+		margin-top: 24px;
+	}
+
+	div {
+		margin: unset;
+	}
+
+	.button {
+		margin-top: 30px;
+		display: flex;
+		align-items: center;
+		transition: all 0.5s;
+		align-self: center;
+
+		span {
+			margin-left: 5px;
+			color: $text-main;
+		}
+
+		padding: 0 40px;
+		margin-bottom: 20px;
+		font-size: 16px;
+		background-color: $active;
+		&:active {
+			color: $active;
+			border-color: $active;
+		}
+		&:hover {
+			color: $text-name;
+			border-color: $text-name;
+		}
+	}
+}
+
+.question {
+	position: absolute;
+	font-size: 11px;
+	color: $text-add;
+	white-space: nowrap;
+	top: -16px;
+	left: 16px;
+	transition: color 0.5s;
+	cursor: pointer;
+	&:hover {
+		color: $text-main;
+	}
+	&:active {
+		color: $text-add;
+		transition: color 0.1s;
+	}
+}
+
+.input {
+	transition: all 0.5s;
+	min-width: 274px;
+	&:hover {
+		border-color: $hover;
+	}
+}
