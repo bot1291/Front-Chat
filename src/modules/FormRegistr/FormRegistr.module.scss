@@ -49,3 +49,31 @@
 		}
 	}
 }
+.input {
+	min-width: 274px;
+	transition: all 0.5s;
+	&:hover {
+		border-color: $hover;
+	}
+	&:focus {
+		border-color: $hover;
+	}
+	&::placeholder {
+		transition: all 0.5s;
+	}
+	&:hover {
+		&::placeholder {
+			color: darken($color: $text-add, $amount: 1%);
+		}
+	}
+	input {
+		&::placeholder {
+			transition: all 0.5s;
+		}
+		&:hover {
+			&::placeholder {
+				color: darken($color: $text-add, $amount: 1%);
+			}
+		}
+	}
+}

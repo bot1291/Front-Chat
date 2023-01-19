@@ -29,23 +29,33 @@
 		font-size: 16px;
 		background-color: $active;
 		&:active {
-			color: $active;
 			border-color: $active;
 		}
 		&:hover {
-			color: $text-name;
 			border-color: $text-name;
 		}
 	}
 
 	.input {
-		transition: all 0.5s;
 		min-width: 274px;
+		transition: all 0.5s;
 		&:hover {
 			border-color: $hover;
 		}
 		&:focus {
 			border-color: $hover;
+		}
+		input {
+			&::placeholder {
+				transition: all 0.5s;
+			}
+			&:hover {
+				&::placeholder {
+					color: darken($color: $text-add, $amount: 1%);
+				}
+			}
+		}
+		svg {
 		}
 	}
 }
