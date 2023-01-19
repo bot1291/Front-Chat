@@ -5,7 +5,7 @@ import { Authorization as Auto, Registration as Reg } from '../pages';
 import { Main } from '../pages/Main/Main';
 
 export const AppRouter: FC = () => {
-	const [isLogin, setIsLogin] = useState<boolean>(false);
+	const [isLogin, setIsLogin] = useState<boolean>(true);
 
 	const checkForLogin = (elem: JSX.Element) => (isLogin ? <Main /> : elem);
 

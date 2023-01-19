@@ -16,7 +16,7 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 					his
 					data="Thu Jan 19 2023 21:39:11 GMT+0300"
 					className={styles.his}>
-					Hellodddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+					Helloddddddвввввввввввввввввввdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
 					<br />
 					ddddddddddddddd
 					<br />
@@ -32,28 +32,44 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 					<br />
 					ddddddddddddddd
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 20 2023 00:00:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
-				<Message data="18.01.2023" className={styles.your}>
+				<Message
+					data="Thu Jan 20 2023 00:44:00 GMT+0300"
+					className={styles.your}>
 					Hi
 				</Message>
 			</div>

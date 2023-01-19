@@ -4,6 +4,7 @@
 	position: relative;
 	padding: 10px 15px 5px;
 	border-radius: 10px;
+	max-width: calc(100vw - 520px);
 }
 
 .his {
@@ -20,6 +21,7 @@
 
 .content {
 	color: $text-main;
+	word-wrap: break-word;
 }
 
 .data {
