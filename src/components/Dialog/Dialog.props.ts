@@ -6,4 +6,5 @@ export interface DialogProps
 	name: string;
 	avatar: IAvatar;
 	lastMes: string;
+	date: string;
 }

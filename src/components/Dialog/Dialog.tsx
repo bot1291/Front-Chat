@@ -3,15 +3,31 @@ import { DialogProps } from './Dialog.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
 import Button from '@mui/material/Button';
+import { format, isToday } from 'date-fns';
+import ru from 'date-fns/locale/ru';
 
 export const Dialog: FC<DialogProps> = ({
 	avatar,
 	lastMes = 'test',
 	name = 'Name',
+	date,
 	className,
 	...props
 }) => {
 	const [isChosen, setIsChosen] = useState<boolean>(false);
+	const messageDate = new Date(date);
+
+	const getDate = (): string => {
+		if (isToday(messageDate)) {
+			return format(messageDate, 'p', {
+				locale: ru,
+			});
+		}
+
+		return format(messageDate, 'EEEEEE', {
+			locale: ru,
+		});
+	};
 
 	return (
 		<div
@@ -43,7 +59,7 @@ export const Dialog: FC<DialogProps> = ({
 					<span className={styles.name}>{name}</span>
 					<span className={styles.lastMes}>{lastMes}</span>
 				</div>
-				<span className={styles.date}>17.01.2023</span>
+				<span className={styles.date}>{getDate()}</span>
 			</Button>
 		</div>
 	);

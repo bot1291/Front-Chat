@@ -4,23 +4,25 @@ import cn from 'classnames';
 import { FC } from 'react';
 import HisIcon from './his.svg';
 import YourIcon from './your.svg';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import ru from 'date-fns/locale/ru';
-import isToday from 'date-fns/isToday';
-import isYesterday from 'date-fns/isYesterday';
-import isThisHour from 'date-fns/isThisHour';
-import format from 'date-fns/format';
-import intlFormatDistance from 'date-fns/intlFormatDistance';
-import isThisYear from 'date-fns/isThisYear';
+import {
+	isThisHour,
+	isYesterday,
+	isThisYear,
+	intlFormatDistance,
+	isToday,
+	formatDistanceToNow,
+	format,
+} from 'date-fns';
 
 export const Message: FC<MessageProps> = ({
 	his,
-	data,
+	date,
 	children,
 	className,
 	...props
 }) => {
-	const messageDate = new Date(data);
+	const messageDate = new Date(date);
 
 	const getData = (): string => {
 		if (isThisHour(messageDate)) {

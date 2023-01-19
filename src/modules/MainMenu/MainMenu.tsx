@@ -13,36 +13,43 @@ const dialogs = [
 			color: 'white',
 		},
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Ivan',
 		avatar: { img: '', color: 'green' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Petr',
 		avatar: { img: '', color: 'blue' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Madzhahet',
 		avatar: { img: '', color: 'pink' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Ivan',
 		avatar: { img: '', color: 'corall' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Ivan',
 		avatar: { img: '', color: 'white' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
 		name: 'Igor',
 		avatar: { img: '', color: 'white' },
 		lastMes: 'I like...',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 ];
 
@@ -68,12 +75,7 @@ export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
 			</div>
 			<div className={styles.dialogs}>
 				{dialogs.map((d) => (
-					<Dialog
-						key={Math.random()}
-						lastMes={d.lastMes}
-						name={d.name}
-						avatar={d.avatar}
-					/>
+					<Dialog key={Math.random()} {...d} />
 				))}
 			</div>
 		</div>
