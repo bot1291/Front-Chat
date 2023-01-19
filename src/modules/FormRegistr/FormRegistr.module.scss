@@ -1,11 +1,11 @@
 @import '../../styles/variables';
 
-.formLogin {
+.FormRegistr {
 	display: flex;
 	flex-direction: column;
 	position: relative;
 	& > div + div {
-		padding-top: 24px;
+		padding-top: 15px;
 	}
 
 	div {

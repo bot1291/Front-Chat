@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
-import { Authorization } from '../pages';
+import { Authorization, Registration } from '../pages';
 import { Main } from '../pages/Main/Main';
 
 export const AppRouter: FC = () => {
@@ -11,6 +11,7 @@ export const AppRouter: FC = () => {
 				<Route index element={<Main />} />
 				<Route path="/*" element={'t'} />
 				<Route path="/login" element={<Authorization />} />
+				<Route path="/registration" element={<Registration />} />
 			</Route>
 		</Routes>
 	);

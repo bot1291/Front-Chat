@@ -3,6 +3,7 @@ import { AuthorizationProps } from './Authorization.props';
 import cn from 'classnames';
 import { FC } from 'react';
 import { FormLogin } from '../../modules';
+import { Link } from 'react-router-dom';
 
 export const Authorization: FC<AuthorizationProps> = ({
 	className,
@@ -14,9 +15,16 @@ export const Authorization: FC<AuthorizationProps> = ({
 			className={cn(className, styles.wrapper)}
 			{...props}>
 			<h1 className={styles.welcome}>Добро пожаловать!</h1>
-			<span className={styles.text}>Пожалуйста, войдите в аккаунт</span>
+			<span className={styles.text}>
+				Пожалуйста, войдите в аккаунт{' '}
+				<Link to="/registration" className={styles.question}>
+					Не зарегистрированы?
+				</Link>
+			</span>
 			<FormLogin />
-			<button className={styles.registr}>Зарегистрироваться</button>
+			<Link to="/registration" className={styles.registr}>
+				Зарегистрироваться
+			</Link>
 		</div>
 	);
 };

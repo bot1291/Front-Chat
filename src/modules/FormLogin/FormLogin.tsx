@@ -1,15 +1,15 @@
 import styles from './FormLogin.module.scss';
+import './FormLogin.scss';
 import { FormLoginProps } from './FormLogin.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { Button, Form } from 'antd';
-import { Input } from '../../components';
+import { Button, Form, Input } from 'antd';
 import { IoIosLogIn } from 'react-icons/io';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
 export const FormLogin: FC<FormLoginProps> = ({ className }) => {
 	return (
 		<Form className={cn(styles.formLogin, className)}>
-			<button className={styles.question}>Не зарегистрированы?</button>
 			<Form.Item
 				name="mail"
 				rules={[
@@ -18,7 +18,11 @@ export const FormLogin: FC<FormLoginProps> = ({ className }) => {
 						message: 'Пожалуйста, напишите почту!',
 					},
 				]}>
-				<Input className={styles.input} placeholder="Ваша почта" />
+				<Input
+					prefix={<UserOutlined className="site-form-item-icon" />}
+					className={styles.input}
+					placeholder="Ваша почта"
+				/>
 			</Form.Item>
 			<Form.Item
 				name="password"
@@ -28,9 +32,17 @@ export const FormLogin: FC<FormLoginProps> = ({ className }) => {
 						message: 'Пожалуйста, напишите пароль!',
 					},
 				]}>
-				<Input className={styles.input} placeholder="Ваша пароль" />
+				<Input.Password
+					prefix={<LockOutlined className="site-form-item-icon" />}
+					type="password"
+					className={styles.input}
+					placeholder="Ваш пароль"
+				/>
 			</Form.Item>
-			<Button icon={<IoIosLogIn />} className={styles.button}>
+			<Button
+				htmlType="submit"
+				icon={<IoIosLogIn />}
+				className={styles.button}>
 				Войти в аккаунт
 			</Button>
 		</Form>
