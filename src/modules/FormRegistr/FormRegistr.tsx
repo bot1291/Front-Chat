@@ -5,7 +5,12 @@ import cn from 'classnames';
 import { FC } from 'react';
 import { Button, Form, Input } from 'antd';
 import { IoIosLogIn } from 'react-icons/io';
-import { MailOutlined, UserAddOutlined, LockOutlined } from '@ant-design/icons';
+import {
+	MailOutlined,
+	UserAddOutlined,
+	LockOutlined,
+	CheckCircleTwoTone,
+} from '@ant-design/icons';
 
 export const FormRegistr: FC<FormRegistrProps> = ({
 	setItSubmited,
@@ -96,6 +101,13 @@ export const FormRegistr: FC<FormRegistrProps> = ({
 			</Button>
 		</Form>
 	) : (
-		<div></div>
+		<div className={styles.approve}>
+			<CheckCircleTwoTone className={styles.check} />
+			<p>Подтвердите почту</p>
+			<span>
+				На Вашу почту отправлено письмо с ссылкой на подтверждение
+				аккаунта
+			</span>
+		</div>
 	);
 };

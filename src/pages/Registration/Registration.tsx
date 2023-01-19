@@ -11,19 +11,6 @@ export const Registration: FC<RegistrationProps> = ({
 }) => {
 	const [isSubmited, setItSubmited] = useState<boolean>(false);
 
-	const checkForSubmit = () => {
-		return isSubmited ? (
-			'Подтвердите почту'
-		) : (
-			<>
-				Пройдите регистрацию
-				<Link to="/login" className={styles.question}>
-					Уже зарегистрированы?
-				</Link>
-			</>
-		);
-	};
-
 	return (
 		<div className={cn(className, styles.Registration)} {...props}>
 			<div
@@ -31,14 +18,25 @@ export const Registration: FC<RegistrationProps> = ({
 				className={cn(className, styles.wrapper)}
 				{...props}>
 				<h1 className={styles.welcome}>Регистрация</h1>
-				<span className={styles.text}>{checkForSubmit()}</span>
+				<span className={styles.text}>
+					{!isSubmited && (
+						<>
+							Пройдите регистрацию
+							<Link to="/login" className={styles.question}>
+								Уже зарегистрированы?
+							</Link>
+						</>
+					)}
+				</span>
 				<FormRegistr
 					setItSubmited={setItSubmited}
 					isSubmited={isSubmited}
 				/>
-				<Link to="/login" className={styles.registr}>
-					Войти в аккаунт
-				</Link>
+				{!isSubmited && (
+					<Link to="/login" className={styles.registr}>
+						Войти в аккаунт
+					</Link>
+				)}
 			</div>
 		</div>
 	);

@@ -13,7 +13,9 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 			<TopLine />
 			<div className={styles.dialogs}>
 				<Message his data="18.01.2023" className={styles.his}>
-					Hello
+					Hellodddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+					<br />
+					ddddddddddddddd
 				</Message>
 				<Message data="18.01.2023" className={styles.your}>
 					Hi

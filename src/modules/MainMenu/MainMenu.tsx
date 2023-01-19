@@ -8,7 +8,10 @@ import { Settings } from '..';
 const dialogs = [
 	{
 		name: 'Artem',
-		avatar: { img: '', color: 'white' },
+		avatar: {
+			img: 'https://sun9-32.userapi.com/impg/5DtN2YbRyW_Y3W-AgMNfimCuhDTmDJVqrsC1XQ/OxbWk1Rmfd4.jpg?size=1280x960&quality=96&sign=e82c3e2635e65ae19d31be8672798b2a&type=album',
+			color: 'white',
+		},
 		lastMes: 'I like...',
 	},
 	{
