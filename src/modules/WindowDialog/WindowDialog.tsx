@@ -2,7 +2,7 @@ import styles from './WindowDialog.module.scss';
 import { WindowDialogProps } from './WindowDialog.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { TopLine, Interactions, Message } from '..';
+import { Interactions, Message, TopLine } from '../../components';
 
 export const WindowDialog: FC<WindowDialogProps> = ({
 	className,

@@ -2,7 +2,8 @@ import styles from './MainMenu.module.scss';
 import { MainMenuProps } from './MainMenu.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
-import { Dialog, Hamburger, Search, Settings } from '..';
+import { Dialog, Hamburger, Search } from '../../components';
+import { Settings } from '..';
 
 const dialogs = [
 	{

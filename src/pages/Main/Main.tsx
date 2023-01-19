@@ -2,7 +2,7 @@ import styles from './Main.module.scss';
 import { MainProps } from './Main.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { MainMenu, WindowDialog } from '../../components';
+import { MainMenu, WindowDialog } from '../../modules';
 
 export const Main: FC<MainProps> = ({ className, ...props }) => {
 	return (
