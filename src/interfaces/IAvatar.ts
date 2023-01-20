@@ -1,4 +1,4 @@
-export default interface IAvatar {
+export interface IAvatar {
 	img?: string;
 	color: string;
 }

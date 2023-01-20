@@ -17,7 +17,6 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
 					className={styles.his}>
 					Helloddddddвввввввввввввввввввdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-					<br />
 					ddddddddddddddd
 					<br />
 					ddddddddddddddd
@@ -34,7 +33,13 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 				</Message>
 				<Message
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
-					className={styles.your}>
+					className={styles.your}
+					attachments={[
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+					]}>
 					Hi
 				</Message>
 				<Message
@@ -49,7 +54,8 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 				</Message>
 				<Message
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
-					className={styles.your}>
+					className={styles.your}
+					isReaded>
 					Hi
 				</Message>
 				<Message
@@ -68,9 +74,10 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 					Hi
 				</Message>
 				<Message
-					date="Thu Jan 20 2023 00:44:00 GMT+0300"
-					className={styles.your}>
-					Hi
+					date="Thu Jan 20 2023 16:44:00 GMT+0300"
+					className={styles.your}
+					isReaded>
+					Hi how are you
 				</Message>
 			</div>
 			<Interactions />

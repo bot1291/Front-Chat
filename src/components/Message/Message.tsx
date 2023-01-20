@@ -14,15 +14,26 @@ import {
 	formatDistanceToNow,
 	format,
 } from 'date-fns';
+import ReadedIcon from './readed.svg';
+import NoReadedIcon from './noreaded.svg';
 
 export const Message: FC<MessageProps> = ({
 	his,
 	date,
 	children,
+	isReaded,
+	attachments,
 	className,
 	...props
 }) => {
 	const messageDate = new Date(date);
+
+	const getIsReaded = (): JSX.Element =>
+		isReaded ? (
+			<ReadedIcon className={styles.icon} />
+		) : (
+			<NoReadedIcon className={styles.icon} />
+		);
 
 	const getData = (): string => {
 		if (isThisHour(messageDate)) {
@@ -47,7 +58,7 @@ export const Message: FC<MessageProps> = ({
 		}
 
 		if (isThisYear(messageDate)) {
-			return format(messageDate, 'd LLLL, p', {
+			return format(messageDate, 'dfloat: right; LLLL, p', {
 				locale: ru,
 			});
 		}
@@ -57,17 +68,38 @@ export const Message: FC<MessageProps> = ({
 		});
 	};
 
-	return his ? (
-		<div className={cn(className, styles.Message, styles.his)} {...props}>
+	const getBlockDate = () => {
+		return his ? (
+			<span className={styles.date}>{getData()}</span>
+		) : (
+			<div className={styles.dateAndReaded}>
+				<span
+					className={cn(styles.date, {
+						[styles.yourDate]: !his,
+					})}>
+					{getData()}
+				</span>
+				{getIsReaded()}
+			</div>
+		);
+	};
+
+	return (
+		<div
+			className={cn(
+				className,
+				styles.Message,
+				his ? styles.his : styles.your
+			)}
+			{...props}>
 			<span className={styles.content}>{children}</span>
-			<span className={styles.data}>{getData()}</span>
-			<HisIcon className={cn(styles.angle, styles.angleHis)} />
-		</div>
-	) : (
-		<div className={cn(className, styles.Message, styles.your)} {...props}>
-			<span className={styles.content}>{children}</span>
-			<span className={styles.data}>{getData()}</span>
-			<YourIcon className={cn(styles.angle, styles.angleYour)} />
+			{getBlockDate()}
+			<YourIcon
+				className={cn(
+					styles.angle,
+					his ? styles.angleHis : styles.angleYour
+				)}
+			/>
 		</div>
 	);
 };
