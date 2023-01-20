@@ -1,10 +1,19 @@
 @import '../../styles/variables';
 
-.Message {
-	position: relative;
-	padding: 10px 8px 5px;
+.messageBlock {
+	max-width: calc(85vw - 520px);
+	display: flex;
+	flex-direction: column;
+}
+
+.message {
 	border-radius: 10px;
-	max-width: calc(100vw - 520px);
+	max-width: inherit;
+	overflow: hidden;
+	position: relative;
+	&:hover .onlyPicDate {
+		opacity: 1;
+	}
 }
 
 .his {
@@ -20,11 +29,48 @@
 }
 
 .content {
-	color: $text-main;
-	word-wrap: break-word;
+	padding: 10px 8px 5px;
+
+	span {
+		color: $text-main;
+		word-wrap: break-word;
+	}
 }
 
-.dateAndReaded {
+.smile {
+	display: flex;
+	flex-direction: row-reverse;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding-bottom: 8px;
+	margin-top: 10px;
+
+	img {
+		border-radius: 5px;
+		width: 45px;
+		height: 45px;
+		cursor: pointer;
+	}
+}
+
+.attachments {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	padding-bottom: 5px;
+
+	img {
+		cursor: pointer;
+		max-width: calc(85vw - 520px);
+		min-width: 150px;
+	}
+}
+
+.unset {
+	padding-bottom: 0;
+}
+
+.dateBlock {
 	display: flex;
 	float: right;
 	align-items: center;
@@ -33,8 +79,36 @@
 .date {
 	margin-left: 10px;
 	color: $text-add;
-	font-size: 11px;
+	font-size: 14px;
 	float: right;
+	position: relative;
+}
+
+.hisDate {
+	margin-right: 5px;
+}
+
+.onlyPicDate {
+	position: absolute;
+	bottom: 5px;
+	right: 8px;
+	opacity: 0;
+	background-color: rgba($color: gray, $alpha: 0.5);
+	padding: 3px 10px;
+	border-radius: 10px;
+	color: $white;
+	transition: all 0.2s;
+	font-size: 14px;
+
+	span {
+		margin-left: unset;
+		color: $white;
+		font-size: 14px;
+	}
+
+	path {
+		fill: $white;
+	}
 }
 
 .yourDate {
@@ -44,18 +118,4 @@
 .icon {
 	width: 15px;
 	height: 8px;
-}
-
-.angle {
-	position: absolute;
-	top: 17.8px;
-	z-index: -1;
-}
-
-.angleYour {
-	right: -12px;
-}
-
-.angleHis {
-	left: -12px;
 }

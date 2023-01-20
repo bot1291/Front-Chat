@@ -15,22 +15,39 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 				<Message
 					his
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
-					className={styles.his}>
-					Helloddddddвввввввввввввввввввdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-					<br />
-					ddddddddddddddd
-				</Message>
+					className={styles.his}
+					attachments={[
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+					]}></Message>
+				<Message
+					his
+					date="Thu Jan 19 2023 21:39:11 GMT+0300"
+					className={styles.his}
+					attachments={[
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://www.fxmag.pl/images/articles/chinska-gospodarka-w-2021-r-i-jej-perspektywy-na-kolejne-lata-raport-millenium.jpg',
+						},
+					]}></Message>
 				<Message
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
 					className={styles.your}
@@ -39,12 +56,36 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 							filename: 'namefile',
 							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
 						},
-					]}>
-					Hi
-				</Message>
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://www.fxmag.pl/images/articles/chinska-gospodarka-w-2021-r-i-jej-perspektywy-na-kolejne-lata-raport-millenium.jpg',
+						},
+					]}></Message>
 				<Message
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
-					className={styles.your}>
+					className={styles.your}
+					attachments={[
+						{
+							filename: 'namefile',
+							url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+						},
+						{
+							filename: 'namefile',
+							url: 'https://www.fxmag.pl/images/articles/chinska-gospodarka-w-2021-r-i-jej-perspektywy-na-kolejne-lata-raport-millenium.jpg',
+						},
+					]}>
 					Hi
 				</Message>
 				<Message

@@ -2,8 +2,6 @@ import styles from './Message.module.scss';
 import { MessageProps } from './Message.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import HisIcon from './his.svg';
-import YourIcon from './your.svg';
 import ru from 'date-fns/locale/ru';
 import {
 	isThisHour,
@@ -23,6 +21,7 @@ export const Message: FC<MessageProps> = ({
 	children,
 	isReaded,
 	attachments,
+	smile,
 	className,
 	...props
 }) => {
@@ -68,11 +67,19 @@ export const Message: FC<MessageProps> = ({
 		});
 	};
 
-	const getBlockDate = () => {
-		return his ? (
-			<span className={styles.date}>{getData()}</span>
+	const getDateBlock = (): JSX.Element =>
+		his ? (
+			<span
+				className={cn(styles.date, styles.hisDate, {
+					[styles.onlyPicDate]: !children,
+				})}>
+				{getData()}
+			</span>
 		) : (
-			<div className={styles.dateAndReaded}>
+			<div
+				className={cn(styles.dateBlock, {
+					[styles.onlyPicDate]: !children,
+				})}>
 				<span
 					className={cn(styles.date, {
 						[styles.yourDate]: !his,
@@ -82,24 +89,44 @@ export const Message: FC<MessageProps> = ({
 				{getIsReaded()}
 			</div>
 		);
-	};
 
 	return (
-		<div
-			className={cn(
-				className,
-				styles.Message,
-				his ? styles.his : styles.your
+		<div className={cn(className, styles.messageBlock)} {...props}>
+			{smile && (
+				<div className={styles.smile}>
+					{smile.map((a) => (
+						<img key={Math.random()} alt={''} src={''} />
+					))}
+				</div>
 			)}
-			{...props}>
-			<span className={styles.content}>{children}</span>
-			{getBlockDate()}
-			<YourIcon
+			<div
 				className={cn(
-					styles.angle,
-					his ? styles.angleHis : styles.angleYour
+					className,
+					styles.message,
+					his ? styles.his : styles.your
+				)}>
+				{attachments && (
+					<div
+						className={cn(styles.attachments, {
+							[styles.unset]: !children,
+						})}>
+						{attachments.map((a) => (
+							<img
+								key={Math.random()}
+								alt={a.filename}
+								src={a.url}
+							/>
+						))}
+						{!children && getDateBlock()}
+					</div>
 				)}
-			/>
+				{children && (
+					<div className={styles.content}>
+						<span>{children}</span>
+						{getDateBlock()}
+					</div>
+				)}
+			</div>
 		</div>
 	);
 };

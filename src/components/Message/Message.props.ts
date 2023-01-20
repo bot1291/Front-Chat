@@ -7,4 +7,5 @@ export interface MessageProps
 	date: string;
 	isReaded?: boolean;
 	attachments?: Attachments[];
+	smile?: string[];
 }
