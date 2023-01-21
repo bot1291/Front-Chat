@@ -70,6 +70,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 					checkForError={checkForError(errors, touched, 'password')}
 					prefix={<LockOutlined />}
 					placeholder="Пароль"
+					isPassword
 					isShortDistance
 				/>
 
@@ -82,14 +83,13 @@ export const RegForm: FC<FormRegistrProps> = ({
 					checkForError={checkForError(errors, touched, 'confirm')}
 					prefix={<LockOutlined />}
 					placeholder="Повторите пароль"
+					isPassword
 					isShortDistance
 				/>
 
 				<Button
 					onClick={() =>
-						errors.isWritten &&
-						!(Object.keys(errors).length - 1) &&
-						dispatch(setIsSubmited())
+						!Object.keys(errors).length && dispatch(setIsSubmited())
 					}
 					htmlType="submit"
 					icon={<IoIosLogIn />}

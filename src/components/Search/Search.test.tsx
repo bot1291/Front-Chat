@@ -1,7 +1,7 @@
-import setRender from '../../utils/setRender';
 import { Search } from './Search';
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';
+import { setRender } from '../../utils';
 
 describe('CategoriesSkeleton', () => {
 	it('Check for written value', async () => {
