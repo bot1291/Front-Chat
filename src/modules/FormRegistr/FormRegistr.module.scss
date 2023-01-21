@@ -42,9 +42,6 @@
 		min-width: 274px;
 		transition: all 0.5s;
 		border-color: $hover;
-		&:hover {
-			border-color: $hover;
-		}
 		&:focus {
 			border-color: $hover;
 		}
@@ -52,6 +49,7 @@
 			transition: all 0.5s;
 		}
 		&:hover {
+			border-color: $hover;
 			&::placeholder {
 				color: darken($color: $text-add, $amount: 1%);
 			}

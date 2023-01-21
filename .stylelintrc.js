@@ -10,6 +10,7 @@ module.exports = {
 		'color-hex-case': null,
 		'string-quotes': 'single',
 		'selector-class-pattern': null,
+		'selector-id-pattern': null,
 		'declaration-block-no-redundant-longhand-properties': null,
 		'color-function-notation': null,
 		'import-notation': 'string',

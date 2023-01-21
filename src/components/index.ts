@@ -6,4 +6,4 @@ export * from './TopLine/TopLine';
 export * from './Setting/Setting';
 export * from './Message/Message';
 export * from './Interactions/Interactions';
-export * from './Input/Input';
+export * from './CustomInput/CustomInput';
