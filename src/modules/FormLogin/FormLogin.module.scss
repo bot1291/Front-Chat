@@ -29,18 +29,12 @@
 		font-size: 16px;
 		background-color: $active;
 		&:active {
+			color: $active;
 			border-color: $active;
 		}
 		&:hover {
-			border-color: $active;
-			svg {
-				color: $text-name;
-			}
-		}
-
-		svg {
-			transition: all 0.3s;
-			color: $gray;
+			color: $text-name;
+			border-color: $text-name;
 		}
 	}
 

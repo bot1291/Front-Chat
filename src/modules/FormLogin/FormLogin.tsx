@@ -17,8 +17,10 @@ export const MyForm: FC<FormLoginProps> = ({
 	values,
 	className,
 }) => {
+	const checkForError = (field: string) => errors[field] && touched[field];
+
 	const getErrors = (field: string) =>
-		errors[field] && touched[field] && errors[field];
+		checkForError(field) && checkForError(field) && errors[field];
 
 	return (
 		<Form
@@ -31,14 +33,14 @@ export const MyForm: FC<FormLoginProps> = ({
 					name="mail"
 					prefix={<UserOutlined />}
 					className={cn(styles.input, {
-						[styles.error]: errors.mail,
+						[styles.error]: checkForError('mail'),
 					})}
 					placeholder="Ваша почта"
 				/>
 				{
 					<span
 						className={cn(styles.feedback, {
-							[styles.visible]: errors.mail,
+							[styles.visible]: checkForError('mail'),
 						})}>
 						{getErrors('mail')}
 					</span>
@@ -52,14 +54,14 @@ export const MyForm: FC<FormLoginProps> = ({
 					prefix={<LockOutlined />}
 					type="password"
 					className={cn(styles.input, {
-						[styles.error]: errors.password,
+						[styles.error]: checkForError('password'),
 					})}
 					placeholder="Ваш пароль"
 				/>
 				{
 					<span
 						className={cn(styles.feedback, {
-							[styles.visible]: errors.password,
+							[styles.visible]: checkForError('password'),
 						})}>
 						{getErrors('password')}
 					</span>
@@ -83,10 +85,16 @@ export const FormLogin = withFormik({
 
 		if (!values.mail) {
 			errors.mail = 'Заполните почту';
+		} else if (
+			!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.mail)
+		) {
+			errors.mail = 'Неверный формат почты';
 		}
 
 		if (!values.password) {
 			errors.password = 'Заполните пароль';
+		} else if (values.password.length < 4) {
+			errors.password = 'Слишком короткий пароль';
 		}
 
 		return errors;
@@ -99,5 +107,5 @@ export const FormLogin = withFormik({
 		}, 500);
 	},
 
-	displayName: 'BasicForm',
+	displayName: 'FormLogin',
 })(MyForm);

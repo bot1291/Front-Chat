@@ -1,3 +1,3 @@
 export default interface IErrors {
-	[prop: string]: string;
+	[prop: string]: string | boolean;
 }

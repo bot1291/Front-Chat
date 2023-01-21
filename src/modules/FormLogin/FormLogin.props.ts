@@ -8,7 +8,7 @@ export interface FormLoginProps
 	values: IValues;
 	touched: ITouched;
 	errors: IErrors;
-	handleChange: (e: React.SyntheticEvent) => void;
-	handleBlur: (e: React.SyntheticEvent) => void;
-	handleSubmit: (e: React.SyntheticEvent) => void;
+	handleChange: () => void;
+	handleBlur: () => void;
+	handleSubmit: () => void;
 }
