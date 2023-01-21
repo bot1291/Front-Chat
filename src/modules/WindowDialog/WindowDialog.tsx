@@ -51,6 +51,7 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 				<Message
 					date="Thu Jan 19 2023 21:39:11 GMT+0300"
 					className={styles.your}
+					isReaded
 					attachments={[
 						{
 							filename: 'namefile',

@@ -3,9 +3,10 @@ import { Route, Routes } from 'react-router-dom';
 import { MainLayout } from '../layouts/MainLayout';
 import { Authorization as Auto, Registration as Reg } from '../pages';
 import { Main } from '../pages/Main/Main';
+import { Example } from '../modules/Example/Example';
 
 export const AppRouter: FC = () => {
-	const [isLogin, setIsLogin] = useState<boolean>(true);
+	const [isLogin, setIsLogin] = useState<boolean>(false);
 
 	const checkForLogin = (elem: JSX.Element) => (isLogin ? <Main /> : elem);
 
@@ -18,6 +19,7 @@ export const AppRouter: FC = () => {
 				<Route path="im/:id" element={checkForLogin(<Auto />)} />
 				<Route path="login" element={checkForLogin(<Auto />)} />
 				<Route path="reg" element={checkForLogin(<Reg />)} />
+				<Route path="test" element={checkForLogin(<Example />)} />
 			</Route>
 		</Routes>
 	);

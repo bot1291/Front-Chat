@@ -6,38 +6,64 @@ import { FC } from 'react';
 import { Button, Form, Input } from 'antd';
 import { IoIosLogIn } from 'react-icons/io';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { withFormik } from 'formik';
+import IErrors from '../../interfaces/IErrors';
 
-export const FormLogin: FC<FormLoginProps> = ({ className }) => {
+export const MyForm: FC<FormLoginProps> = ({
+	errors,
+	handleChange,
+	handleSubmit,
+	touched,
+	values,
+	className,
+}) => {
+	const getErrors = (field: string) =>
+		errors[field] && touched[field] && errors[field];
+
 	return (
-		<Form className={cn(styles.formLogin, className)}>
-			<Form.Item
-				name="mail"
-				rules={[
-					{
-						required: true,
-						message: 'Пожалуйста, напишите почту!',
-					},
-				]}>
+		<Form
+			onFinish={handleSubmit}
+			className={cn(styles.formLogin, className)}>
+			<Form.Item className={styles.blockInput}>
 				<Input
-					prefix={<UserOutlined className="site-form-item-icon" />}
-					className={styles.input}
+					onChange={handleChange}
+					value={values.mail}
+					name="mail"
+					prefix={<UserOutlined />}
+					className={cn(styles.input, {
+						[styles.error]: errors.mail,
+					})}
 					placeholder="Ваша почта"
 				/>
+				{
+					<span
+						className={cn(styles.feedback, {
+							[styles.visible]: errors.mail,
+						})}>
+						{getErrors('mail')}
+					</span>
+				}
 			</Form.Item>
-			<Form.Item
-				name="password"
-				rules={[
-					{
-						required: true,
-						message: 'Пожалуйста, напишите пароль!',
-					},
-				]}>
+			<Form.Item>
 				<Input.Password
-					prefix={<LockOutlined className="site-form-item-icon" />}
+					onChange={handleChange}
+					value={values.password}
+					name="password"
+					prefix={<LockOutlined />}
 					type="password"
-					className={styles.input}
+					className={cn(styles.input, {
+						[styles.error]: errors.password,
+					})}
 					placeholder="Ваш пароль"
 				/>
+				{
+					<span
+						className={cn(styles.feedback, {
+							[styles.visible]: errors.password,
+						})}>
+						{getErrors('password')}
+					</span>
+				}
 			</Form.Item>
 			<Button
 				htmlType="submit"
@@ -48,3 +74,30 @@ export const FormLogin: FC<FormLoginProps> = ({ className }) => {
 		</Form>
 	);
 };
+
+export const FormLogin = withFormik({
+	mapPropsToValues: () => ({ mail: '', password: '' }),
+
+	validate: (values) => {
+		const errors: IErrors = {};
+
+		if (!values.mail) {
+			errors.mail = 'Заполните почту';
+		}
+
+		if (!values.password) {
+			errors.password = 'Заполните пароль';
+		}
+
+		return errors;
+	},
+
+	handleSubmit: (values, { setSubmitting }) => {
+		setTimeout(() => {
+			alert(JSON.stringify(values, null, 2));
+			setSubmitting(false);
+		}, 500);
+	},
+
+	displayName: 'BasicForm',
+})(MyForm);

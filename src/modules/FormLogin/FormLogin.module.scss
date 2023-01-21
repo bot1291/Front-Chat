@@ -29,22 +29,36 @@
 		font-size: 16px;
 		background-color: $active;
 		&:active {
-			color: $active;
 			border-color: $active;
 		}
 		&:hover {
-			color: $text-name;
-			border-color: $text-name;
+			border-color: $active;
+			svg {
+				color: $text-name;
+			}
 		}
+
+		svg {
+			transition: all 0.3s;
+			color: $gray;
+		}
+	}
+
+	.blockInput {
+		position: relative;
 	}
 
 	.input {
 		min-width: 274px;
+		border-color: $hover;
 		transition: all 0.5s;
 		&:hover {
 			border-color: $hover;
 		}
 		&:focus {
+			border-color: $hover;
+		}
+		&:active {
 			border-color: $hover;
 		}
 		input {
@@ -58,4 +72,23 @@
 			}
 		}
 	}
+
+	.error {
+		border-color: $red;
+	}
+}
+
+.feedback {
+	position: absolute;
+	right: 50%;
+	bottom: -15px;
+	transform: translate(50%, 0);
+	font-size: 11px;
+	opacity: 0;
+	transition: all 0.3s;
+}
+
+.visible {
+	opacity: 1;
+	bottom: -20px;
 }

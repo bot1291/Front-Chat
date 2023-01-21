@@ -52,6 +52,7 @@
 .input {
 	min-width: 274px;
 	transition: all 0.5s;
+	border-color: $hover;
 	&:hover {
 		border-color: $hover;
 	}

@@ -74,6 +74,10 @@
 	display: flex;
 	float: right;
 	align-items: center;
+
+	path {
+		fill: $text-name;
+	}
 }
 
 .date {

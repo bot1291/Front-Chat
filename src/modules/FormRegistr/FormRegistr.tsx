@@ -116,8 +116,6 @@ export const FormRegistr: FC<FormRegistrProps> = ({
 				</Button>
 			</Form>
 
-			{/* Below works after registration */}
-
 			<div
 				className={cn(styles.approve, {
 					[styles.visible]: isSubmited,
