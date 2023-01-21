@@ -7,6 +7,7 @@ import { Button, Form } from 'antd';
 import { IoIosLogIn } from 'react-icons/io';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
 import { CustomInput } from '../../components';
+import { checkForError } from '../../utils/helpers/checkForError';
 
 export const LoginForm: FC<FormLoginProps> = ({
 	errors,
@@ -16,10 +17,6 @@ export const LoginForm: FC<FormLoginProps> = ({
 	values,
 	className,
 }) => {
-	const checkForError = (field: string) => errors[field] && touched[field];
-
-	const getErrors = (field: string) => checkForError(field) && errors[field];
-
 	return (
 		<Form
 			onFinish={handleSubmit}
@@ -28,8 +25,7 @@ export const LoginForm: FC<FormLoginProps> = ({
 				onChange={handleChange}
 				name="mail"
 				value={values.mail}
-				checkForError={checkForError}
-				getErrors={getErrors}
+				checkForError={checkForError(errors, touched, 'mail')}
 				prefix={<UserOutlined />}
 				placeholder="Ваша почта"
 			/>
@@ -38,8 +34,7 @@ export const LoginForm: FC<FormLoginProps> = ({
 				onChange={handleChange}
 				name="password"
 				value={values.password}
-				checkForError={checkForError}
-				getErrors={getErrors}
+				checkForError={checkForError(errors, touched, 'password')}
 				prefix={<LockOutlined />}
 				placeholder="Ваш пароль"
 				isPassword

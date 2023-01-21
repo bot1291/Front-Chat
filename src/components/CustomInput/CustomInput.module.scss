@@ -1,25 +1,26 @@
 @import '../../styles/variables';
-
-.input {
-	min-width: 274px;
-	border-color: $hover;
-	transition: all 0.5s;
-	&:hover {
+.inputWrapper {
+	.input {
+		min-width: 274px;
 		border-color: $hover;
-	}
-	&:focus {
-		border-color: $hover;
-	}
-	&:active {
-		border-color: $hover;
-	}
-	input {
-		&::placeholder {
-			transition: all 0.5s;
-		}
+		transition: all 0.5s;
 		&:hover {
+			border-color: $active;
+		}
+		&:focus {
+			border-color: $active;
+		}
+		&:active {
+			border-color: $active;
+		}
+		input {
 			&::placeholder {
-				color: darken($color: $text-add, $amount: 1%);
+				transition: all 0.5s;
+			}
+			&:hover {
+				&::placeholder {
+					color: darken($color: $text-add, $amount: 1%);
+				}
 			}
 		}
 	}

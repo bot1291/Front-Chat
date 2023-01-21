@@ -37,38 +37,6 @@
 			border-color: $text-name;
 		}
 	}
-
-	.input {
-		min-width: 274px;
-		transition: all 0.5s;
-		border-color: $hover;
-		&:focus {
-			border-color: $hover;
-		}
-		&::placeholder {
-			transition: all 0.5s;
-		}
-		&:hover {
-			border-color: $hover;
-			&::placeholder {
-				color: darken($color: $text-add, $amount: 1%);
-			}
-		}
-		input {
-			&::placeholder {
-				transition: all 0.5s;
-			}
-			&:hover {
-				&::placeholder {
-					color: darken($color: $text-add, $amount: 1%);
-				}
-			}
-		}
-	}
-
-	.error {
-		border-color: $red;
-	}
 }
 
 .approve {
@@ -99,20 +67,4 @@
 		width: 35px;
 		height: 35px;
 	}
-}
-
-.feedback {
-	position: absolute;
-	right: 50%;
-	bottom: -13px;
-	transform: translate(50%, 0);
-	font-size: 11px;
-	opacity: 0;
-	transition: all 0.3s;
-	white-space: nowrap;
-}
-
-.visibleError {
-	opacity: 1;
-	bottom: -17px;
 }

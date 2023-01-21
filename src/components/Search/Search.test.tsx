@@ -1,4 +1,4 @@
-import setRender from '../../helpers/setRender';
+import setRender from '../../utils/setRender';
 import { Search } from './Search';
 import { screen } from '@testing-library/dom';
 import userEvent from '@testing-library/user-event';

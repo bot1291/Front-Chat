@@ -14,6 +14,7 @@ import {
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setIsSubmited } from '../../store/slices/RegistrSlice/RegistrSlice';
 import { CustomInput } from '../../components';
+import { checkForError } from '../../utils/helpers/checkForError';
 
 export const RegForm: FC<FormRegistrProps> = ({
 	errors,
@@ -25,11 +26,6 @@ export const RegForm: FC<FormRegistrProps> = ({
 }) => {
 	const { isSubmited } = useAppSelector((state) => state.registrReducer);
 	const dispatch = useAppDispatch();
-
-	const checkForError = (field: string) => errors[field] && touched[field];
-
-	const getErrors = (field: string) =>
-		checkForError(field) && checkForError(field) && errors[field];
 
 	const getValidateStatus = (field: string): 'success' | undefined =>
 		touched[field] && !errors[field] ? 'success' : undefined;
@@ -47,8 +43,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 					onChange={handleChange}
 					name="email"
 					value={values.mail}
-					checkForError={checkForError}
-					getErrors={getErrors}
+					checkForError={checkForError(errors, touched, 'email')}
 					prefix={<MailOutlined />}
 					placeholder="Ваша почта"
 					isShortDistance
@@ -60,8 +55,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 					onChange={handleChange}
 					name="nickname"
 					value={values.nickname}
-					checkForError={checkForError}
-					getErrors={getErrors}
+					checkForError={checkForError(errors, touched, 'nickname')}
 					prefix={<UserAddOutlined />}
 					placeholder="Ваше имя"
 					isShortDistance
@@ -73,8 +67,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 					onChange={handleChange}
 					name="password"
 					value={values.password}
-					checkForError={checkForError}
-					getErrors={getErrors}
+					checkForError={checkForError(errors, touched, 'password')}
 					prefix={<LockOutlined />}
 					placeholder="Пароль"
 					isShortDistance
@@ -86,8 +79,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 					onChange={handleChange}
 					name="confirm"
 					value={values.confirm}
-					checkForError={checkForError}
-					getErrors={getErrors}
+					checkForError={checkForError(errors, touched, 'confirm')}
 					prefix={<LockOutlined />}
 					placeholder="Повторите пароль"
 					isShortDistance

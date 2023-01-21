@@ -5,7 +5,6 @@ import { FC } from 'react';
 import { Form, Input } from 'antd';
 
 export const CustomInput: FC<CustomInputProps> = ({
-	getErrors,
 	name,
 	value,
 	placeholder,
@@ -18,7 +17,10 @@ export const CustomInput: FC<CustomInputProps> = ({
 	checkForError,
 }) => {
 	return (
-		<Form.Item hasFeedback={hasFeedback} validateStatus={validateStatus}>
+		<Form.Item
+			className={styles.inputWrapper}
+			hasFeedback={hasFeedback}
+			validateStatus={validateStatus}>
 			{isPassword ? (
 				<Input.Password
 					onChange={onChange}
@@ -26,7 +28,7 @@ export const CustomInput: FC<CustomInputProps> = ({
 					prefix={prefix}
 					name={name}
 					className={cn(styles.input, {
-						[styles.error]: checkForError(name),
+						[styles.error]: checkForError,
 					})}
 					placeholder={name}
 				/>
@@ -37,7 +39,7 @@ export const CustomInput: FC<CustomInputProps> = ({
 					prefix={prefix}
 					name={name}
 					className={cn(styles.input, {
-						[styles.error]: checkForError(name),
+						[styles.error]: checkForError,
 					})}
 					placeholder={placeholder}
 				/>
@@ -48,9 +50,9 @@ export const CustomInput: FC<CustomInputProps> = ({
 						[styles.shortFeedback]: isShortDistance,
 						[isShortDistance
 							? styles.shortVisible
-							: styles.visible]: checkForError(name),
+							: styles.visible]: checkForError,
 					})}>
-					{getErrors(name)}
+					{checkForError}
 				</span>
 			}
 		</Form.Item>
