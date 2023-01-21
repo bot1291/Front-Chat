@@ -94,7 +94,7 @@ export const Message: FC<MessageProps> = ({
 		<div className={cn(className, styles.messageBlock)} {...props}>
 			{smile && (
 				<div className={styles.smile}>
-					{smile.map((a) => (
+					{smile.map(() => (
 						<img key={Math.random()} alt={''} src={''} />
 					))}
 				</div>

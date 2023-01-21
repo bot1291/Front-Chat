@@ -1,15 +1,16 @@
 import styles from './Registration.module.scss';
 import { RegistrationProps } from './Registration.props';
 import cn from 'classnames';
-import { FC, useState } from 'react';
+import { FC } from 'react';
 import { FormRegistr } from '../../modules';
 import { Link } from 'react-router-dom';
+import { useAppSelector } from '../../hooks/redux';
 
 export const Registration: FC<RegistrationProps> = ({
 	className,
 	...props
 }) => {
-	const [isSubmited, setItSubmited] = useState<boolean>(false);
+	const { isSubmited } = useAppSelector((state) => state.registrReducer);
 
 	return (
 		<div className={cn(className, styles.Registration)} {...props}>
@@ -28,10 +29,7 @@ export const Registration: FC<RegistrationProps> = ({
 						</>
 					)}
 				</span>
-				<FormRegistr
-					setItSubmited={setItSubmited}
-					isSubmited={isSubmited}
-				/>
+				<FormRegistr />
 				{!isSubmited && (
 					<Link to="/login" className={styles.registr}>
 						Войти в аккаунт

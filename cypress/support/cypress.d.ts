@@ -10,7 +10,7 @@ declare namespace Cypress {
 	interface Chainable {
 		checkStorage(
 			key: string,
-			item: any,
+			item: unknown,
 			link?: string
 		): Chainable<Cypress.StorageByOrigin>;
 	}
