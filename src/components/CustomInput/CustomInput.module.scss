@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.input {
+	min-width: 274px;
+	border-color: $hover;
+	transition: all 0.5s;
+	&:hover {
+		border-color: $hover;
+	}
+	&:focus {
+		border-color: $hover;
+	}
+	&:active {
+		border-color: $hover;
+	}
+	input {
+		&::placeholder {
+			transition: all 0.5s;
+		}
+		&:hover {
+			&::placeholder {
+				color: darken($color: $text-add, $amount: 1%);
+			}
+		}
+	}
+}
+
+.error {
+	border-color: $red;
+}
+
+.feedback {
+	position: absolute;
+	right: 50%;
+	bottom: -15px;
+	transform: translate(50%, 0);
+	font-size: 11px;
+	opacity: 0;
+	transition: all 0.3s;
+	white-space: nowrap;
+}
+
+.visible {
+	opacity: 1;
+	bottom: -20px;
+}
+
+.shortFeedback {
+	bottom: -13px;
+}
+
+.shortVisible {
+	bottom: -17px;
+	opacity: 1;
+}
