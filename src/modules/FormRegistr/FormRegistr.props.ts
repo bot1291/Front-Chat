@@ -1,7 +1,14 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import IErrors from '../../interfaces/IErrors';
+import ITouched from '../../interfaces/ITouched';
+import IValues from '../../interfaces/IValues';
 
 export interface FormRegistrProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
-	isSubmited: boolean;
-	setItSubmited: (isSubmited: boolean) => void;
+	values: IValues;
+	touched: ITouched;
+	errors: IErrors;
+	handleChange: () => void;
+	handleBlur: () => void;
+	handleSubmit: () => void;
 }
