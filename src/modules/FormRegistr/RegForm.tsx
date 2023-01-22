@@ -11,8 +11,7 @@ import {
 	LockOutlined,
 	CheckCircleTwoTone,
 } from '@ant-design/icons';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { setIsSubmited } from '../../store/slices/RegistrSlice/RegistrSlice';
+import { useAppSelector } from '../../hooks/redux';
 import { CustomInput } from '../../components';
 import { checkForError } from '../../utils/helpers/checkForError';
 
@@ -25,7 +24,6 @@ export const RegForm: FC<FormRegistrProps> = ({
 	className,
 }) => {
 	const { isSubmited } = useAppSelector((state) => state.registrReducer);
-	const dispatch = useAppDispatch();
 
 	const getValidateStatus = (field: string): 'success' | undefined =>
 		touched[field] && !errors[field] ? 'success' : undefined;
@@ -88,9 +86,6 @@ export const RegForm: FC<FormRegistrProps> = ({
 				/>
 
 				<Button
-					onClick={() =>
-						!Object.keys(errors).length && dispatch(setIsSubmited())
-					}
 					htmlType="submit"
 					icon={<IoIosLogIn />}
 					className={styles.button}>

@@ -1,7 +1,7 @@
-import setRender from '../setRender';
 import { screen } from '@testing-library/react';
 import { DetailedHTMLProps, FC, HTMLAttributes } from 'react';
 import { useAppSelector } from '../../../hooks/redux';
+import { setRender } from '../setRender';
 
 const initialState = {
 	test: 'test text',
