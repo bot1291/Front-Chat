@@ -1,11 +1,11 @@
-@import '../../styles/variables';
+@import '../../../../styles/variables';
 
-.formLogin {
-	display: flex;
+.FormRegistr {
+	display: none;
 	flex-direction: column;
 	position: relative;
 	& > div + div {
-		padding-top: 24px;
+		padding-top: 15px;
 	}
 
 	div {
@@ -36,5 +36,35 @@
 			color: $text-name;
 			border-color: $text-name;
 		}
+	}
+}
+
+.approve {
+	display: none;
+	flex-direction: column;
+	align-items: center;
+
+	p {
+		color: $text-main;
+		margin-bottom: 10px;
+		font-size: 20px;
+	}
+
+	span {
+		color: $text-add;
+		max-width: 354px;
+		margin-bottom: 20px;
+		line-height: 25px;
+	}
+}
+
+.visible {
+	display: flex;
+}
+
+.check {
+	svg {
+		width: 35px;
+		height: 35px;
 	}
 }

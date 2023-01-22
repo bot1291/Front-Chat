@@ -2,9 +2,9 @@ import styles from './Registration.module.scss';
 import { RegistrationProps } from './Registration.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { FormRegistr } from '../../modules';
 import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../hooks/redux';
+import { FormRegistrFormik } from '../../modules';
 
 export const Registration: FC<RegistrationProps> = ({
 	className,
@@ -29,7 +29,7 @@ export const Registration: FC<RegistrationProps> = ({
 						</>
 					)}
 				</span>
-				<FormRegistr />
+				<FormRegistrFormik />
 				{!isSubmited && (
 					<Link to="/login" className={styles.registr}>
 						Войти в аккаунт

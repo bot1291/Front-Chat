@@ -3,7 +3,7 @@ import { SettingsProps } from './Settings.props';
 import cn from 'classnames';
 import { FC } from 'react';
 import CloudIcon from './cloud.svg';
-import { Setting } from '../../components';
+import { Setting } from '../../ui';
 
 export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 	const avatar = { img: '', color: 'yellow' };

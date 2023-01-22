@@ -2,7 +2,7 @@ import styles from './Authorization.module.scss';
 import { AuthorizationProps } from './Authorization.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { FormLogin } from '../../modules';
+import { FormLoginFormik } from '../../modules';
 import { Link } from 'react-router-dom';
 
 export const Authorization: FC<AuthorizationProps> = ({
@@ -21,7 +21,7 @@ export const Authorization: FC<AuthorizationProps> = ({
 					Не зарегистрированы?
 				</Link>
 			</span>
-			<FormLogin />
+			<FormLoginFormik />
 			<Link to="/reg" className={styles.registr}>
 				Зарегистрироваться
 			</Link>

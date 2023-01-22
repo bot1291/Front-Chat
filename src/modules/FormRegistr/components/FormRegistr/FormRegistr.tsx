@@ -11,11 +11,11 @@ import {
 	LockOutlined,
 	CheckCircleTwoTone,
 } from '@ant-design/icons';
-import { useAppSelector } from '../../hooks/redux';
-import { CustomInput } from '../../components';
-import { checkForError } from '../../utils/helpers/checkForError';
+import { useAppSelector } from '../../../../hooks/redux';
+import { checkForError } from '../../../../utils/helpers/checkForError';
+import { CustomInput } from '../../../../ui';
 
-export const RegForm: FC<FormRegistrProps> = ({
+export const FormRegistr: FC<FormRegistrProps> = ({
 	errors,
 	handleChange,
 	handleSubmit,
@@ -27,7 +27,7 @@ export const RegForm: FC<FormRegistrProps> = ({
 
 	const getValidateStatus = (field: string): 'success' | undefined =>
 		touched[field] && !errors[field] ? 'success' : undefined;
-
+	console.log(touched);
 	return (
 		<>
 			<Form

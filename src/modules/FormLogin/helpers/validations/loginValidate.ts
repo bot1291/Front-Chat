@@ -1,5 +1,5 @@
-import IErrors from '../../interfaces/IErrors';
-import IValues from '../../interfaces/IValues';
+import IErrors from '../../../../interfaces/IErrors';
+import IValues from '../../../../interfaces/IValues';
 
 export const loginValidate = (errors: IErrors, values: IValues): IErrors => {
 	if (!values.mail) {

@@ -1,3 +1,4 @@
-export * from './validations/regValidate';
-export * from './validations/loginValidate';
+export * from '../modules/FormRegistr/helpers/validations/regValidate';
+export * from '../modules/FormLogin/helpers/validations/loginValidate';
 export * from './helpers/setRender';
+export * from './helpers/getDate';

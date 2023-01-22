@@ -6,10 +6,10 @@ import { FC } from 'react';
 import { Button, Form } from 'antd';
 import { IoIosLogIn } from 'react-icons/io';
 import { LockOutlined, UserOutlined } from '@ant-design/icons';
-import { CustomInput } from '../../components';
-import { checkForError } from '../../utils/helpers/checkForError';
+import { CustomInput } from '../../../../ui';
+import { checkForError } from '../../../../utils/helpers/checkForError';
 
-export const LoginForm: FC<FormLoginProps> = ({
+export const FormLogin: FC<FormLoginProps> = ({
 	errors,
 	handleChange,
 	handleSubmit,

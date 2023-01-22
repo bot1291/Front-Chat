@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .messageBlock {
-	max-width: calc(85vw - 520px);
+	max-width: calc(75vw - 520px);
 	display: flex;
 	flex-direction: column;
 }
@@ -61,7 +61,7 @@
 
 	img {
 		cursor: pointer;
-		max-width: calc(85vw - 520px);
+		max-width: calc(75vw - 520px);
 		min-width: 150px;
 	}
 }

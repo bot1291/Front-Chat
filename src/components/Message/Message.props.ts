@@ -8,4 +8,5 @@ export interface MessageProps
 	isReaded?: boolean;
 	attachments?: Attachments[];
 	smile?: string[];
+	isTyping: boolean;
 }

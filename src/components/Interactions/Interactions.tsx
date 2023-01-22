@@ -2,9 +2,9 @@ import styles from './Interactions.module.scss';
 import { InteractionsProps } from './Interactions.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import MircoIcon from './micro.svg';
-import PaperClipIcon from './paperClip.svg';
-import SmileIcon from './smile.svg';
+import MircoIcon from './assets/micro.svg';
+import PaperClipIcon from './assets/paperClip.svg';
+import SmileIcon from './assets/smile.svg';
 import { Input } from 'antd';
 
 const { TextArea } = Input;

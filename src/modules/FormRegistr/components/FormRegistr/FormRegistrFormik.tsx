@@ -1,11 +1,11 @@
 import { withFormik } from 'formik';
-import IErrors from '../../interfaces/IErrors';
-import { setIsSubmited } from '../../store/slices/RegistrSlice/RegistrSlice';
-import { store } from '../../store/store';
-import { regValidate } from '../../utils';
-import { RegForm } from './RegForm';
+import { regValidate } from '../../helpers';
+import { FormRegistr } from './FormRegistr';
+import { store } from '../../../../store/store';
+import IErrors from '../../../../interfaces/IErrors';
+import { setIsSubmited } from '../../../../store/slices/RegistrSlice/RegistrSlice';
 
-export const FormRegistr = withFormik({
+export const FormRegistrFormik = withFormik({
 	mapPropsToValues: () => ({
 		email: '',
 		password: '',
@@ -28,4 +28,4 @@ export const FormRegistr = withFormik({
 	},
 
 	displayName: 'FormRegistr',
-})(RegForm);
+})(FormRegistr);

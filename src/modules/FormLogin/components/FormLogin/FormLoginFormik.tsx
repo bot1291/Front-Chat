@@ -1,9 +1,10 @@
 import { withFormik } from 'formik';
-import IErrors from '../../interfaces/IErrors';
-import { loginValidate } from '../../utils';
-import { LoginForm } from './LoginForm';
+import IErrors from '../../../../interfaces/IErrors';
+import { loginValidate } from '../../helpers';
 
-export const FormLogin = withFormik({
+import { FormLogin } from './LoginForm';
+
+export const FormLoginFormik = withFormik({
 	mapPropsToValues: () => ({ mail: '', password: '' }),
 
 	validate: (values) => {
@@ -20,4 +21,4 @@ export const FormLogin = withFormik({
 	},
 
 	displayName: 'FormLogin',
-})(LoginForm);
+})(FormLogin);
