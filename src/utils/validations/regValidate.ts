@@ -1,9 +1,7 @@
 import IErrors from '../../interfaces/IErrors';
 import IValues from '../../interfaces/IValues';
 
-export const regValidate = (values: IValues): IErrors => {
-	const errors: IErrors = {};
-
+export const regValidate = (errors: IErrors, values: IValues): IErrors => {
 	if (!values.email) {
 		errors.email = 'Заполните почту';
 	} else if (

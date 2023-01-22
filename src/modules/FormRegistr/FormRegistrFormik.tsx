@@ -1,4 +1,5 @@
 import { withFormik } from 'formik';
+import IErrors from '../../interfaces/IErrors';
 import { setIsSubmited } from '../../store/slices/RegistrSlice/RegistrSlice';
 import { store } from '../../store/store';
 import { regValidate } from '../../utils';
@@ -13,7 +14,9 @@ export const FormRegistr = withFormik({
 	}),
 
 	validate: (values) => {
-		return regValidate(values);
+		const errors: IErrors = regValidate({}, values);
+
+		return errors;
 	},
 
 	handleSubmit: (values, { setSubmitting }) => {
