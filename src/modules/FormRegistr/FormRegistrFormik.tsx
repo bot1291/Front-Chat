@@ -1,5 +1,4 @@
 import { withFormik } from 'formik';
-import { useAppSelector } from '../../hooks/redux';
 import { setIsSubmited } from '../../store/slices/RegistrSlice/RegistrSlice';
 import { store } from '../../store/store';
 import { regValidate } from '../../utils';
