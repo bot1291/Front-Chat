@@ -2,7 +2,6 @@ import styles from './Message.module.scss';
 import { MessageProps } from './Message.props';
 import cn from 'classnames';
 import { FC } from 'react';
-
 import { getDateBlock } from './helpers/getDateBlock';
 
 export const Message: FC<MessageProps> = ({
@@ -16,10 +15,6 @@ export const Message: FC<MessageProps> = ({
 	className,
 	...props
 }) => {
-	if (isTyping) {
-		return <></>;
-	}
-
 	return (
 		<div className={cn(className, styles.messageBlock)} {...props}>
 			{smile && (
@@ -46,11 +41,21 @@ export const Message: FC<MessageProps> = ({
 							getDateBlock(date, children, his, isReaded)}
 					</div>
 				)}
-				{children && (
-					<div className={styles.content}>
-						<span>{children}</span>
-						{getDateBlock(date, children, his, isReaded)}
+				{isTyping ? (
+					<div className={cn(styles.typingContent)}>
+						<div>
+							<span />
+							<span />
+							<span />
+						</div>
 					</div>
+				) : (
+					children && (
+						<div className={styles.content}>
+							<span>{children}</span>
+							{getDateBlock(date, children, his, isReaded)}
+						</div>
+					)
 				)}
 			</div>
 		</div>

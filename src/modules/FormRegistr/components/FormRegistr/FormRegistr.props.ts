@@ -1,7 +1,7 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import IErrors from '../../interfaces/IErrors';
-import ITouched from '../../interfaces/ITouched';
-import IValues from '../../interfaces/IValues';
+import IErrors from '../../../../interfaces/IErrors';
+import ITouched from '../../../../interfaces/ITouched';
+import IValues from '../../../../interfaces/IValues';
 
 export interface FormRegistrProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {

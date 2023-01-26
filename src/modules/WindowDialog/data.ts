@@ -14,19 +14,6 @@ export const dialogs: IDialogs[] = [
 		his: true,
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 		isReaded: false,
-		smile: undefined,
-		isTyping: true,
-		attachments: [
-			{
-				filename: 'namefile',
-				url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
-			},
-		],
-	},
-	{
-		his: true,
-		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
-		isReaded: false,
 		text: 'bla',
 		smile: undefined,
 		isTyping: false,
@@ -54,7 +41,7 @@ export const dialogs: IDialogs[] = [
 		],
 	},
 	{
-		his: false,
+		his: true,
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 		isReaded: true,
 		smile: undefined,
@@ -131,5 +118,19 @@ export const dialogs: IDialogs[] = [
 		smile: undefined,
 		isTyping: false,
 		text: 'Hi',
+	},
+	{
+		his: true,
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+		isReaded: false,
+		smile: undefined,
+		isTyping: true,
+	},
+	{
+		his: false,
+		date: 'Thu Jan 26 2023 16:39:11 GMT+0300',
+		isReaded: false,
+		smile: undefined,
+		isTyping: true,
 	},
 ];
