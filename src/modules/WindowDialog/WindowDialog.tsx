@@ -11,7 +11,6 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 	...props
 }) => {
 	const bottomDiv: React.RefObject<HTMLDivElement> = createRef();
-	const windowDialog: React.RefObject<HTMLDivElement> = createRef();
 
 	useEffect(() => {
 		bottomDiv.current?.scrollIntoView();
@@ -20,7 +19,7 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 	return (
 		<div className={cn(className, styles.WindowDialog)} {...props}>
 			<TopLine />
-			<div ref={windowDialog} className={styles.dialogs}>
+			<div className={styles.dialogs}>
 				{dialogs &&
 					dialogs.map((d) => (
 						<Message
