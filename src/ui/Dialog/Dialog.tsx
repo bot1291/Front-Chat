@@ -44,7 +44,7 @@ export const Dialog: FC<DialogProps> = ({
 				</div>
 				<div className={styles.author}>
 					<span className={styles.name}>
-						{getSlicedString(name, 4)}
+						{getSlicedString(name, 10)}
 					</span>
 					<span className={styles.lastMes}>
 						{getSlicedString(lastMes, 15)}

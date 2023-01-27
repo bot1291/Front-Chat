@@ -9,7 +9,7 @@ export const dialogs = [
 		date: 'Thu Jan 26 2023 18:52:11 GMT+0300',
 	},
 	{
-		name: 'Ivan',
+		name: 'Ivan_xx_XX$NaGiBaToR$XX_XX',
 		avatar: { img: '', color: 'orange' },
 		lastMes: 'If i slept with you, let us forget about everything',
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
