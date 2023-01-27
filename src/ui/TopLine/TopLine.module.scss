@@ -3,6 +3,8 @@
 .TopLine {
 	padding: 19px 0 19px 20px;
 	background-color: $add;
+	display: flex;
+	justify-content: space-between;
 }
 
 .user {

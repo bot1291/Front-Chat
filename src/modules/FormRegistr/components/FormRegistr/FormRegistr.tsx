@@ -27,7 +27,6 @@ export const FormRegistr: FC<FormRegistrProps> = ({
 
 	const getValidateStatus = (field: string): 'success' | undefined =>
 		touched[field] && !errors[field] ? 'success' : undefined;
-	console.log(touched);
 	return (
 		<>
 			<Form

@@ -18,6 +18,8 @@ export const AppRouter: FC = () => {
 				<Route path="im/:id" element={checkForLogin(<Auto />)} />
 				<Route path="login" element={checkForLogin(<Auto />)} />
 				<Route path="reg" element={checkForLogin(<Reg />)} />
+				<Route path="logBackup" element={<Auto />} />
+				<Route path="regBackup" element={<Reg />} />
 			</Route>
 		</Routes>
 	);
