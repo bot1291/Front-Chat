@@ -17,13 +17,13 @@
 }
 
 .his {
-	background-color: $message;
+	background-color: var(--message);
 	border-bottom-left-radius: 0;
 	box-shadow: 5px 3px 5px rgba(84, 81, 81, 15%);
 }
 
 .your {
-	background-color: $active;
+	background-color: var(--active);
 	border-bottom-right-radius: 0;
 	box-shadow: -4px 3px 5px rgba(84, 81, 81, 15%);
 }
@@ -32,7 +32,7 @@
 	padding: 10px 8px 5px;
 
 	span {
-		color: $text-main;
+		color: var(--text-main);
 		word-wrap: break-word;
 	}
 }
@@ -106,13 +106,13 @@
 	align-items: center;
 
 	path {
-		fill: $text-name;
+		fill: var(--text-main);
 	}
 }
 
 .date {
 	margin-left: 10px;
-	color: $text-add;
+	color: var(--text-add);
 	font-size: 14px;
 	float: right;
 	position: relative;
@@ -156,10 +156,10 @@
 
 @keyframes typing {
 	0% {
-		background-color: $text-name;
+		background-color: var(--black);
 	}
 	50%,
 	100% {
-		background-color: lighten($color: $text-name, $amount: 30%);
+		background-color: var(--black-lighter);
 	}
 }

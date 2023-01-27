@@ -1,0 +1,10 @@
+@import '../../styles/variables';
+
+:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled),
+:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch.ant-switch-checked {
+	background-color: var(--black);
+}
+
+:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch:focus-visible {
+	outline: unset;
+}

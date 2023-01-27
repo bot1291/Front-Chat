@@ -2,16 +2,16 @@
 .inputWrapper {
 	.input {
 		min-width: 274px;
-		border-color: $hover;
+		border-color: var(--hover);
 		transition: all 0.5s;
 		&:hover {
-			border-color: $active;
+			border-color: var(--active);
 		}
 		&:focus {
-			border-color: $active;
+			border-color: var(--active);
 		}
 		&:active {
-			border-color: $active;
+			border-color: var(--active);
 		}
 		input {
 			&::placeholder {
@@ -19,7 +19,7 @@
 			}
 			&:hover {
 				&::placeholder {
-					color: darken($color: $text-add, $amount: 1%);
+					color: var(--text-add-darken);
 				}
 			}
 		}

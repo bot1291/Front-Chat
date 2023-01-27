@@ -12,11 +12,11 @@
 .welcome {
 	font-size: 20px;
 	margin-bottom: 10px;
-	color: $text-main;
+	color: var(--text-main);
 }
 
 .text {
-	color: $text-add;
+	color: var(--text-add);
 	position: relative;
 	margin-bottom: 30px;
 }
@@ -24,20 +24,20 @@
 .registr {
 	font-size: 14px;
 	cursor: pointer;
-	color: $text-add;
+	color: var(--text-add);
 	transition: color 0.5s;
 	&:hover {
-		color: $text-main;
+		color: var(--text-main);
 	}
 	&:active {
-		color: $text-add;
+		color: var(--text-add);
 		transition: color 0.1s;
 	}
 }
 
 .question {
 	font-size: 11px;
-	color: $text-add;
+	color: var(--text-add);
 	white-space: nowrap;
 	left: -41px;
 	position: absolute;
@@ -45,10 +45,10 @@
 	transition: color 0.5s;
 	cursor: pointer;
 	&:hover {
-		color: $text-main;
+		color: var(--text-main);
 	}
 	&:active {
-		color: $text-add;
+		color: var(--text-add);
 		transition: color 0.1s;
 	}
 }

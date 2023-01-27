@@ -10,3 +10,7 @@
 		color: gray;
 	}
 }
+
+:where(.css-dev-only-do-not-override-1i9hnpv).ant-btn-default {
+	border-color: unset;
+}

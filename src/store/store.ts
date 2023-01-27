@@ -1,6 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import testReducer from './slices/TestSlice/TestSlice';
 import registrReducer from './slices/RegistrSlice/RegistrSlice';
+import themeReducer from './slices/ThemeSlice/ThemeSlice';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const createReduxStore = (initialState = {}) => {
@@ -8,6 +9,7 @@ export const createReduxStore = (initialState = {}) => {
 		reducer: {
 			registrReducer,
 			testReducer,
+			themeReducer,
 		},
 		preloadedState: initialState,
 	});

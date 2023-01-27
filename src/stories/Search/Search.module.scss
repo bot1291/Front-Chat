@@ -14,7 +14,7 @@
 .search {
 	position: relative;
 	padding: 11px 0 11px 40px;
-	background-color: $main;
+	background-color: var(--main);
 	border: unset;
 	border-radius: 15px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 15%);

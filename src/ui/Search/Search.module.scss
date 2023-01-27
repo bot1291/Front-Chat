@@ -16,19 +16,19 @@
 	position: relative;
 	width: 100%;
 	padding: 11px 0 11px 40px;
-	background-color: $main;
+	background-color: var(--main);
 	border: unset;
-	color: $text-main;
+	color: var(--text-main);
 	border-radius: 15px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 15%);
 	transition: all 0.5s;
 	&::placeholder {
 		transition: all 0.3s;
-		color: $text-add;
+		color: var(--text-add);
 	}
 	&:hover {
 		&::placeholder {
-			color: darken($color: $text-add, $amount: 15%);
+			color: var(--text-add-darken);
 		}
 		box-shadow: 0 3px 15px rgba(0, 0, 0, 25%);
 	}

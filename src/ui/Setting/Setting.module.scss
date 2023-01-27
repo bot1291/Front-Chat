@@ -3,6 +3,11 @@
 .Setting {
 	display: flex;
 	align-items: center;
+	cursor: pointer;
+
+	span {
+		color: var(--text-main);
+	}
 }
 
 .icon {

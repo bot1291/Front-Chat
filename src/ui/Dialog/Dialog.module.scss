@@ -3,14 +3,14 @@
 .dialog {
 	margin-right: 5px;
 	margin-left: 5px;
-	background-color: $message;
+	background-color: var(--message);
 	border-radius: 10px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 15%);
 	transition: all 0.3s;
 	min-width: 260px;
 
 	&:hover {
-		background-color: $hover;
+		background-color: var(--hover);
 	}
 
 	.button {
@@ -32,7 +32,7 @@
 	width: 39px;
 	height: 39px;
 	margin-right: 13px;
-	background-color: $message;
+	background-color: var(--message);
 	border-radius: 50%;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 15%);
 }
@@ -62,13 +62,13 @@
 }
 
 .lastMes {
-	color: $text-add;
+	color: var(--text-add);
 	white-space: nowrap;
 }
 
 .date {
 	margin-left: auto;
-	color: $text-add;
+	color: var(--text-add);
 	align-self: flex-start;
 	position: absolute;
 	right: 0;
@@ -76,17 +76,17 @@
 }
 
 .chosen {
-	background-color: $active;
+	background-color: var(--active);
 
 	&:hover {
-		background-color: $active;
+		background-color: var(--active);
 	}
 
 	.lastMes {
-		color: $text-name;
+		color: var(--text-main);
 	}
 
 	.date {
-		color: $text-name;
+		color: var(--text-main);
 	}
 }

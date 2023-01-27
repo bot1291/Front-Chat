@@ -21,20 +21,20 @@
 
 		span {
 			margin-left: 5px;
-			color: $text-main;
+			color: var(--text-main);
 		}
 
 		padding: 0 40px;
 		margin-bottom: 20px;
 		font-size: 16px;
-		background-color: $active;
+		background-color: var(--active);
 		&:active {
-			color: $active;
-			border-color: $active;
+			color: var(--active);
+			border-color: var(--active);
 		}
 		&:hover {
-			color: $text-name;
-			border-color: $text-name;
+			color: var(--text-main);
+			border-color: var(--text-main);
 		}
 	}
 }
@@ -45,13 +45,13 @@
 	align-items: center;
 
 	p {
-		color: $text-main;
+		color: var(--text-main);
 		margin-bottom: 10px;
 		font-size: 20px;
 	}
 
 	span {
-		color: $text-add;
+		color: var(--text-add);
 		max-width: 354px;
 		margin-bottom: 20px;
 		line-height: 25px;

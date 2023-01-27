@@ -5,7 +5,7 @@
 	grid-template-columns: auto 1fr auto auto;
 	align-items: flex-end;
 	padding: 20px 23px;
-	background-color: $add;
+	background-color: var(--add);
 	transition: all 0.5s;
 	&:hover {
 		box-shadow: inset 0 3px 10px rgba(0, 0, 0, 10%);
@@ -21,18 +21,18 @@
 
 .input {
 	margin-right: 22px;
-	color: $text-main;
+	color: var(--text-main);
 	font-size: 20px;
-	background-color: $add;
+	background-color: var(--add);
 	border: unset;
 	padding: unset;
 	&::placeholder {
 		transition: all 0.3s;
-		color: $text-add;
+		color: var(--text-add);
 	}
 	&:hover {
 		&::placeholder {
-			color: darken($color: $text-add, $amount: 15%);
+			color: var(--text-add-darken);
 		}
 	}
 	&::-webkit-scrollbar-thumb {

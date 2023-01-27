@@ -3,14 +3,14 @@
 .Settings {
 	height: 100vh;
 	padding: 15px 47px 10px;
-	background-color: $add;
+	background-color: var(--add);
 
 	&::before {
 		position: absolute;
 		top: 77px;
 		left: 0;
 		width: 100%;
-		border-bottom: 1px solid $border;
+		border-bottom: 1px solid var(--border);
 		content: '';
 	}
 }
@@ -27,7 +27,7 @@
 	width: 39px;
 	height: 39px;
 	margin-right: 15px;
-	background-color: white;
+	background-color: var(--white);
 	border-radius: 50%;
 	box-shadow: 0 4px 15px rgba(0, 0, 0, 15%);
 }
@@ -38,7 +38,7 @@
 	left: 0;
 	width: 39px;
 	height: 39px;
-	background-color: $white;
+	background-color: var(--white);
 	border-radius: 50%;
 }
 
@@ -53,5 +53,23 @@
 	display: flex;
 	flex-direction: column;
 	gap: 15px;
+	position: relative;
 	align-items: flex-start;
+	&:after {
+		content: '';
+		position: absolute;
+		width: 100px;
+		height: 100px;
+		background-color: gray;
+		z-index: -1;
+	}
+}
+
+.blackOn {
+	margin-top: 25px;
+
+	button {
+		color: var(--black);
+		margin-right: 10px;
+	}
 }

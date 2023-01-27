@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .hamburger {
-	background-color: $main;
+	background-color: var(--main);
 	border-radius: 15px;
 	box-shadow: 0 3px 10px rgba(0, 0, 0, 15%);
 }
