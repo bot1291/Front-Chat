@@ -39,37 +39,34 @@
 
 .typingContent {
 	padding: 15px 40px;
+	justify-content: center;
+	display: flex;
 
-	& > div {
-		justify-content: center;
+	span {
+		width: 15px;
+		height: 15px;
+		border-radius: 50px;
 		display: flex;
+		animation: typing 0.5s infinite linear alternate;
+	}
 
-		span {
-			width: 15px;
-			height: 15px;
-			border-radius: 50px;
-			display: flex;
-			animation: typing 0.5s infinite linear alternate;
-		}
+	span:last-child {
+		animation-delay: 0.5s;
+		background-color: $gray;
+	}
 
-		span:last-child {
-			animation-delay: 0.5s;
-			background-color: $gray;
-		}
+	span:nth-of-type(2) {
+		animation-delay: 0.25s;
+		background-color: lighten($color: $gray, $amount: 10%);
+	}
 
-		span:nth-of-type(2) {
-			animation-delay: 0.25s;
-			background-color: lighten($color: $gray, $amount: 10%);
-		}
+	span:first-child {
+		animation-delay: 0s;
+		background-color: lighten($color: $gray, $amount: 15%);
+	}
 
-		span:first-child {
-			animation-delay: 0s;
-			background-color: lighten($color: $gray, $amount: 15%);
-		}
-
-		& > span + span {
-			margin-left: 15px;
-		}
+	& > span + span {
+		margin-left: 15px;
 	}
 }
 

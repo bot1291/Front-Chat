@@ -29,6 +29,14 @@ export const Dialog: FC<DialogProps> = ({
 		});
 	};
 
+	const getLastMessage = () => {
+		if (lastMes.length >= 15) {
+			return `${lastMes.slice(0, 15).trim()}...`;
+		}
+
+		return lastMes;
+	};
+
 	return (
 		<div
 			className={cn(className, styles.dialog, {
@@ -57,7 +65,7 @@ export const Dialog: FC<DialogProps> = ({
 				</div>
 				<div className={styles.author}>
 					<span className={styles.name}>{name}</span>
-					<span className={styles.lastMes}>{lastMes}</span>
+					<span className={styles.lastMes}>{getLastMessage()}</span>
 				</div>
 				<span className={styles.date}>{getDate()}</span>
 			</Button>

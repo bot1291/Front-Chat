@@ -43,11 +43,9 @@ export const Message: FC<MessageProps> = ({
 				)}
 				{isTyping ? (
 					<div className={cn(styles.typingContent)}>
-						<div>
-							<span />
-							<span />
-							<span />
-						</div>
+						<span />
+						<span />
+						<span />
 					</div>
 				) : (
 					children && (

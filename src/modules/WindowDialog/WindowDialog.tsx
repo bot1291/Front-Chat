@@ -14,7 +14,7 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 
 	useEffect(() => {
 		bottomDiv.current?.scrollIntoView();
-	}, [bottomDiv]);
+	}, []);
 
 	return (
 		<div className={cn(className, styles.WindowDialog)} {...props}>
