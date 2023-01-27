@@ -1,10 +1,13 @@
 @import '../../styles/variables';
 
-:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled),
-:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch.ant-switch-checked {
+.css-dev-only-do-not-override-1i9hnpv.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled),
+.css-dev-only-do-not-override-1i9hnpv.ant-switch.ant-switch-checked,
+.ant-switch.css-1i9hnpv.ant-switch-checked,
+.ant-switch.css-1i9hnpv.ant-switch-checked:hover:not(.ant-switch-disabled) {
 	background-color: var(--black);
 }
 
-:where(.css-dev-only-do-not-override-1i9hnpv).ant-switch:focus-visible {
+.css-dev-only-do-not-override-1i9hnpv.ant-switch:focus-visible,
+.css-1i9hnpv.ant-switch:focus-visible {
 	outline: unset;
 }

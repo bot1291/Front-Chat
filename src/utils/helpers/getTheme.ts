@@ -10,7 +10,7 @@ export const getTheme = (): TypeTheme => {
 	const userMedia = window.matchMedia('(prefers-color-scheme: light)');
 
 	if (userMedia.matches) {
-		return 'light';
+		return 'default';
 	}
 
 	return 'default';

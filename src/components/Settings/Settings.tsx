@@ -50,6 +50,7 @@ export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 				/>
 				<div className={styles.blackOn}>
 					<Switch
+						className={styles.button}
 						defaultChecked={localStorage.theme === 'black'}
 						onChange={() => {
 							if (theme === 'default')

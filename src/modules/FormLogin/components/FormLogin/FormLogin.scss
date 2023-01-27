@@ -11,6 +11,7 @@
 	}
 }
 
-:where(.css-dev-only-do-not-override-1i9hnpv).ant-btn-default {
-	border-color: unset;
+.css-dev-only-do-not-override-1i9hnpv.ant-btn-default,
+.css-1i9hnpv.ant-btn-default {
+	border-color: none;
 }

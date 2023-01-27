@@ -68,8 +68,13 @@
 .blackOn {
 	margin-top: 25px;
 
-	button {
+	.button {
 		color: var(--black);
 		margin-right: 10px;
+	
+		outline: unset;
+		& > * {
+			outline: unset;
+		}
 	}
 }
