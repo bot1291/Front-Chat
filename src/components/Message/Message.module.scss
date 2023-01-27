@@ -38,13 +38,13 @@
 }
 
 .typingContent {
-	padding: 15px 40px;
+	padding: 10px 15px;
 	justify-content: center;
 	display: flex;
 
 	span {
-		width: 15px;
-		height: 15px;
+		width: 10px;
+		height: 10px;
 		border-radius: 50px;
 		display: flex;
 		animation: typing 0.5s infinite linear alternate;
@@ -52,21 +52,18 @@
 
 	span:last-child {
 		animation-delay: 0.5s;
-		background-color: $gray;
 	}
 
 	span:nth-of-type(2) {
 		animation-delay: 0.25s;
-		background-color: lighten($color: $gray, $amount: 10%);
 	}
 
 	span:first-child {
 		animation-delay: 0s;
-		background-color: lighten($color: $gray, $amount: 15%);
 	}
 
 	& > span + span {
-		margin-left: 15px;
+		margin-left: 8px;
 	}
 }
 
@@ -159,10 +156,10 @@
 
 @keyframes typing {
 	0% {
-		background-color: $gray;
+		background-color: $text-name;
 	}
 	50%,
 	100% {
-		background-color: lighten($color: $gray, $amount: 25%);
+		background-color: lighten($color: $text-name, $amount: 30%);
 	}
 }
