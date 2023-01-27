@@ -1,7 +1,7 @@
 import styles from './WindowDialog.module.scss';
 import { WindowDialogProps } from './WindowDialog.props';
 import cn from 'classnames';
-import { FC } from 'react';
+import { FC, useEffect, useRef } from 'react';
 import { Interactions, Message } from '../../components';
 import { dialogs } from './data';
 import { TopLine } from '../../ui';
@@ -11,6 +11,15 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 	className,
 	...props
 }) => {
+	const bottomDiv: React.MutableRefObject<HTMLDivElement | null> =
+		useRef(null);
+
+	useEffect(() => {
+		bottomDiv.current?.addEventListener('resize', () => {
+			bottomDiv.current?.scrollIntoView();
+		});
+	}, [bottomDiv]);
+
 	return (
 		<div className={cn(className, styles.WindowDialog)} {...props}>
 			<TopLine />
@@ -26,6 +35,7 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 							{d.text}
 						</Message>
 					))}
+				<div ref={bottomDiv} />
 			</ScrollToBottom>
 			<Interactions />
 		</div>
