@@ -15,6 +15,36 @@ export const dialogs = [
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 	},
 	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+	},
+	{
+		name: 'Ivan',
+		avatar: { img: '', color: 'green' },
+		lastMes: 'I like',
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+	},
+	{
 		name: 'Petr',
 		avatar: { img: '', color: 'blue' },
 		lastMes: 'I like',

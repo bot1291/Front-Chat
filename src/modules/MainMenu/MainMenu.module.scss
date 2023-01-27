@@ -53,8 +53,7 @@
 }
 
 .dialogs {
-	// height: inherit;
-	height: 85vh;
+	height: inherit;
 	overflow-y: scroll;
 	&:hover {
 		&::-webkit-scrollbar {

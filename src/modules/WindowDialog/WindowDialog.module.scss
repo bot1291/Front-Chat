@@ -11,30 +11,33 @@
 }
 
 .dialogs {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
 	margin: auto 0 0 8px;
-	padding-right: 8px;
-	padding-bottom: 8px;
-	overflow-x: hidden;
-	overflow-y: scroll;
-	padding-top: 10px;
-	&:hover {
+
+	overflow: hidden;
+	& > div {
+		padding-top: 10px;
+		padding-bottom: 25px;
+		padding-right: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		&:hover {
+			&::-webkit-scrollbar {
+				width: 7px;
+				background-color: unset;
+			}
+
+			&::-webkit-scrollbar-thumb {
+				width: 10px;
+				background-color: #b3b1b1;
+				border-radius: 10px;
+			}
+		}
 		&::-webkit-scrollbar {
 			width: 7px;
 			background-color: unset;
 		}
-
-		&::-webkit-scrollbar-thumb {
-			width: 10px;
-			background-color: #b3b1b1;
-			border-radius: 10px;
-		}
-	}
-	&::-webkit-scrollbar {
-		width: 7px;
-		background-color: unset;
 	}
 }
 
