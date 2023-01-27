@@ -7,12 +7,12 @@ import isToday from 'date-fns/isToday';
 import isYesterday from 'date-fns/isYesterday';
 import ru from 'date-fns/locale/ru';
 
-export const getDate = (date: string): string => {
+export const getDate = (date: string, shortVersion = false): string => {
 	const messageDate = new Date(date);
 
 	if (isThisHour(messageDate)) {
 		return formatDistanceToNow(messageDate, {
-			includeSeconds: true,
+			includeSeconds: !shortVersion,
 			addSuffix: true,
 			locale: ru,
 		});
@@ -21,23 +21,26 @@ export const getDate = (date: string): string => {
 	if (isToday(messageDate)) {
 		return intlFormatDistance(messageDate, new Date(), {
 			locale: 'ru',
-			unit: 'hour',
 		});
 	}
 
 	if (isYesterday(messageDate)) {
-		return `Вчера, в ${format(messageDate, 'p', {
-			locale: ru,
-		})}`;
+		return `Вчера${
+			!shortVersion
+				? `, в ${format(messageDate, 'p', {
+						locale: ru,
+				  })}`
+				: ''
+		}`;
 	}
 
 	if (isThisYear(messageDate)) {
-		return format(messageDate, 'd LLLL, p', {
+		return format(messageDate, `d LLLL${!shortVersion ? `, p` : ''}`, {
 			locale: ru,
 		});
 	}
 
-	return format(messageDate, 'PPP', {
+	return format(messageDate, `${!shortVersion ? 'PPP' : 'P'}`, {
 		locale: ru,
 	});
 };

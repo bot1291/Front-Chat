@@ -16,12 +16,13 @@
 	.button {
 		display: flex;
 		width: 100%;
+		justify-content: flex-start;
 		font-family: 'Proxima Nova', Roboto, system-ui, Tahoma, sans-serif;
 		span {
 			text-transform: none;
 			font-size: 16px;
 		}
-		padding: 8px 18px;
+		padding: 8px 10px;
 		cursor: pointer;
 	}
 }
@@ -69,6 +70,9 @@
 	margin-left: auto;
 	color: $text-add;
 	align-self: flex-start;
+	position: absolute;
+	right: 0;
+	margin-right: 10px;
 }
 
 .chosen {

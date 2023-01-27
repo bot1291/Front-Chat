@@ -3,39 +3,18 @@ import { DialogProps } from './Dialog.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
 import Button from '@mui/material/Button';
-import { format, isToday } from 'date-fns';
-import ru from 'date-fns/locale/ru';
+import { getSlicedString } from '../../utils/helpers/getSlicedString';
+import { getDate } from '../../utils';
 
 export const Dialog: FC<DialogProps> = ({
 	avatar,
-	lastMes = 'test',
+	lastMes,
 	name = 'Name',
 	date,
 	className,
 	...props
 }) => {
 	const [isChosen, setIsChosen] = useState<boolean>(false);
-	const messageDate = new Date(date);
-
-	const getDate = (): string => {
-		if (isToday(messageDate)) {
-			return format(messageDate, 'p', {
-				locale: ru,
-			});
-		}
-
-		return format(messageDate, 'EEEEEE', {
-			locale: ru,
-		});
-	};
-
-	const getLastMessage = () => {
-		if (lastMes.length >= 15) {
-			return `${lastMes.slice(0, 15).trim()}...`;
-		}
-
-		return lastMes;
-	};
 
 	return (
 		<div
@@ -64,10 +43,14 @@ export const Dialog: FC<DialogProps> = ({
 					)}
 				</div>
 				<div className={styles.author}>
-					<span className={styles.name}>{name}</span>
-					<span className={styles.lastMes}>{getLastMessage()}</span>
+					<span className={styles.name}>
+						{getSlicedString(name, 4)}
+					</span>
+					<span className={styles.lastMes}>
+						{getSlicedString(lastMes, 15)}
+					</span>
 				</div>
-				<span className={styles.date}>{getDate()}</span>
+				<span className={styles.date}>{getDate(date, true)}</span>
 			</Button>
 		</div>
 	);

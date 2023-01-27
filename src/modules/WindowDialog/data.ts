@@ -113,7 +113,7 @@ export const dialogs: IDialogs[] = [
 	},
 	{
 		his: false,
-		date: 'Thu Jan 20 2023 00:00:11 GMT+0300',
+		date: 'Thu Jan 26 2021 16:00:11 GMT+0300',
 		isReaded: false,
 		smile: undefined,
 		isTyping: false,
@@ -121,7 +121,7 @@ export const dialogs: IDialogs[] = [
 	},
 	{
 		his: true,
-		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+		date: 'Thu Jan 27 2023 18:53:11 GMT+0300',
 		isReaded: false,
 		smile: undefined,
 		isTyping: true,
