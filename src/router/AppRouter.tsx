@@ -1,10 +1,17 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
+import { useAppSelector } from '../hooks/redux';
 import { MainLayout } from '../layouts/MainLayout';
 import { Authorization as Auto, Registration as Reg } from '../pages';
 import { Main } from '../pages/Main/Main';
 
 export const AppRouter: FC = () => {
+	const { theme } = useAppSelector((state) => state.themeReducer);
+
+	useEffect(() => {
+		document.documentElement.dataset.theme = theme;
+		localStorage.theme = theme;
+	}, [theme]);
 	const [isLogin] = useState<boolean>(true);
 
 	const checkForLogin = (elem: JSX.Element) => (isLogin ? <Main /> : elem);

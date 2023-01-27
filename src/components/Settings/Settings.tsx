@@ -1,7 +1,7 @@
 import styles from './Settings.module.scss';
 import { SettingsProps } from './Settings.props';
 import cn from 'classnames';
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import CloudIcon from './cloud.svg';
 import { Setting } from '../../ui';
 import { Switch } from 'antd';
@@ -14,11 +14,6 @@ export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 	const name = 'Igor';
 	const { theme } = useAppSelector((state) => state.themeReducer);
 	const dispatch = useAppDispatch();
-
-	useEffect(() => {
-		document.documentElement.dataset.theme = theme;
-		localStorage.theme = theme;
-	}, [theme]);
 
 	return (
 		<div className={cn(className, styles.Settings)} {...props}>

@@ -5,6 +5,15 @@
 	--red: #e66;
 	--green: #61d46c;
 	--white: white;
+	--main: #e8bcbc;
+	--add: #ffe4e4;
+	--text-add: #696f70;
+	--text-add-darken: #3d4244;
+	--text-main: #863f3f;
+	--hover: #e8bcbc;
+	--active: #b4dede;
+	--message: #dac2c2;
+	--border: #d7d7d7;
 }
 
 :root[data-theme='default'] {
