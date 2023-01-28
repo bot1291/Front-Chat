@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface IUserState {
-	isOneClicked: number;
+	isOneClicked: string | 0;
 }
 
 export const initialState: IUserState = {
@@ -12,7 +12,7 @@ export const imageSlice = createSlice({
 	name: 'image',
 	initialState,
 	reducers: {
-		setIsOneClicked: (state, action: PayloadAction<number>) => {
+		setIsOneClicked: (state, action: PayloadAction<string | 0>) => {
 			state.isOneClicked = action.payload;
 		},
 	},

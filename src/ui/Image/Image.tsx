@@ -2,8 +2,6 @@ import styles from './Image.module.scss';
 import { ImageProps } from './Image.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { setIsOneClicked } from '../../store/slices/ImageSlice/ImageSlice';
 
 export const Image: FC<ImageProps> = ({
 	isSmall,
@@ -11,9 +9,6 @@ export const Image: FC<ImageProps> = ({
 	className,
 	...props
 }) => {
-	const { isOneClicked } = useAppSelector((state) => state.imageReducer);
-	const dispatch = useAppDispatch();
-
 	return (
 		<>
 			<img
@@ -22,10 +17,6 @@ export const Image: FC<ImageProps> = ({
 					[styles.small]: isSmall,
 				})}
 				{...props}
-			/>
-			<button
-				onClick={() => dispatch(setIsOneClicked(0))}
-				className={cn(styles.bg, { [styles.bgClicked]: isOneClicked })}
 			/>
 		</>
 	);

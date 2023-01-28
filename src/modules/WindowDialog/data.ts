@@ -15,7 +15,7 @@ export const dialogs: IDialogs[] = [
 			},
 			{
 				filename: 'namefile',
-				url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
+				url: 'https://sun9-55.userapi.com/impg/2PNAkYD2DmquX6wa-OpGf35rm6mRol2ceaiQAg/Ibz1VqUahmk.jpg?size=720x787&quality=96&sign=46ef0ed6911f96bc580e80af5f6f26c8&type=album',
 			},
 			{
 				filename: 'namefile',

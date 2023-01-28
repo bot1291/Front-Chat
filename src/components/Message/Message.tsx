@@ -28,6 +28,7 @@ export const Message: FC<MessageProps> = ({
 					<Image isSmall alt="Smile" src={smile} />
 				</div>
 			)}
+
 			<div
 				className={cn(styles.message, his ? styles.his : styles.your, {
 					[styles.clicked]: isOneClicked,
@@ -40,25 +41,36 @@ export const Message: FC<MessageProps> = ({
 						{attachments.map((a, index) => (
 							<Image
 								onClick={() => {
-									if (isOneClicked === index + 1)
+									if (isOneClicked === `${a.url}${index}`)
 										dispatch(setIsOneClicked(0));
-									if (isOneClicked !== index + 1)
-										dispatch(setIsOneClicked(index + 1));
+									if (isOneClicked !== `${a.url}${index}`)
+										dispatch(
+											setIsOneClicked(`${a.url}${index}`)
+										);
 								}}
 								className={cn({
 									[styles.imgClicked]:
-										isOneClicked === index + 1,
+										isOneClicked === `${a.url}${index}`,
 								})}
 								key={Math.random()}
 								alt={a.filename}
 								src={a.url}
 							/>
 						))}
+
+						<button
+							onClick={() => dispatch(setIsOneClicked(0))}
+							className={cn(styles.bg, {
+								[styles.bgClicked]: isOneClicked,
+							})}
+						/>
+
 						{!children &&
 							date &&
 							getDateBlock(date, children, his, isReaded)}
 					</div>
 				)}
+
 				{isTyping ? (
 					<div className={cn(styles.typingContent)}>
 						<span />
