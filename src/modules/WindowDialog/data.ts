@@ -1,14 +1,5 @@
-import { Attachments } from '../../interfaces';
+import { IDialogs } from '../../interfaces/IDialogs';
 
-interface IDialogs {
-	his: boolean;
-	date: string;
-	isReaded: boolean;
-	isTyping: boolean;
-	smile?: string[];
-	attachments?: Attachments[];
-	text?: string;
-}
 export const dialogs: IDialogs[] = [
 	{
 		his: true,
@@ -73,7 +64,6 @@ export const dialogs: IDialogs[] = [
 		his: false,
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
 		isReaded: false,
-		smile: undefined,
 		isTyping: false,
 		text: 'Hi',
 		attachments: [
@@ -118,6 +108,13 @@ export const dialogs: IDialogs[] = [
 		smile: undefined,
 		isTyping: false,
 		text: 'Hi',
+	},
+	{
+		his: false,
+		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',
+		isReaded: false,
+		isTyping: false,
+		smile: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
 	},
 	{
 		his: true,

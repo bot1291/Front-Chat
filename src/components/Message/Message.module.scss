@@ -9,11 +9,23 @@
 .message {
 	border-radius: 10px;
 	max-width: inherit;
-	overflow: hidden;
 	position: relative;
+	overflow: hidden;
 	&:hover .onlyPicDate {
 		opacity: 1;
 	}
+}
+
+.clicked {
+	position: unset;
+}
+
+.imgClicked {
+	z-index: 424242;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 .his {
@@ -75,12 +87,6 @@
 	padding-bottom: 8px;
 	margin-top: 10px;
 
-	img {
-		border-radius: 5px;
-		width: 45px;
-		height: 45px;
-		cursor: pointer;
-	}
 }
 
 .attachments {
@@ -88,12 +94,6 @@
 	flex-wrap: wrap;
 	gap: 6px;
 	padding-bottom: 5px;
-
-	img {
-		cursor: pointer;
-		max-width: calc(75vw - 520px);
-		min-width: 150px;
-	}
 }
 
 .unset {
