@@ -30,7 +30,7 @@ export const CustomInput: FC<CustomInputProps> = ({
 					className={cn(styles.input, {
 						[styles.error]: checkForError,
 					})}
-					placeholder={name}
+					placeholder={placeholder}
 				/>
 			) : (
 				<Input
