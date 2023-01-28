@@ -57,7 +57,6 @@ export const Message: FC<MessageProps> = ({
 								className={cn({
 									[styles.imgClicked]: attachment,
 								})}
-								key={Math.random()}
 								alt={attachment.filename}
 								src={attachment.url}
 							/>

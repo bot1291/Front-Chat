@@ -34,6 +34,7 @@
 	--main-rgb: 22, 21, 21;
 	--add: #202020;
 	--text-add: rgb(235, 235, 235);
+	--text-add-darken: rgb(129, 129, 129);
 	--text-main: rgb(235, 235, 235);
 	--hover: #000;
 	--active: #264b8f;
