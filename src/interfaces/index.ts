@@ -1,2 +1,2 @@
-export * from './Attachments';
+export * from './Attachment';
 export * from './IAvatar';

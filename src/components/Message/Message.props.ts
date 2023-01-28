@@ -1,12 +1,12 @@
 import { DetailedHTMLProps, HTMLAttributes } from 'react';
-import { Attachments } from '../../interfaces';
+import { Attachment } from '../../interfaces';
 
 export interface MessageProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	his?: boolean;
 	date: string;
 	isReaded?: boolean;
-	attachments?: Attachments[];
+	attachments?: Attachment[];
 	smile?: string;
 	isTyping?: boolean;
 }

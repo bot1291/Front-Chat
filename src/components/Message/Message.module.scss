@@ -45,7 +45,7 @@ img.imgClicked {
 .bgClicked {
 	z-index: 424241;
 	opacity: 1;
-	background-color: var(--main);
+	background-color: rgba(var(--main-rgb), 0.45);
 }
 
 .his {

@@ -18,7 +18,7 @@ export const Message: FC<MessageProps> = ({
 	className,
 	...props
 }) => {
-	const { isOneClicked } = useAppSelector((state) => state.imageReducer);
+	const { attachment } = useAppSelector((state) => state.imageReducer);
 	const dispatch = useAppDispatch();
 
 	return (
@@ -31,37 +31,42 @@ export const Message: FC<MessageProps> = ({
 
 			<div
 				className={cn(styles.message, his ? styles.his : styles.your, {
-					[styles.clicked]: isOneClicked,
+					[styles.clicked]: attachment,
 				})}>
 				{attachments && (
 					<div
 						className={cn(styles.attachments, {
 							[styles.unset]: !children,
 						})}>
-						{attachments.map((a, index) => (
+						{attachments.map((a) => (
 							<Image
 								onClick={() => {
-									if (isOneClicked === `${a.url}${index}`)
-										dispatch(setIsOneClicked(0));
-									if (isOneClicked !== `${a.url}${index}`)
-										dispatch(
-											setIsOneClicked(`${a.url}${index}`)
-										);
+									dispatch(setIsOneClicked(a));
 								}}
-								className={cn({
-									[styles.imgClicked]:
-										isOneClicked === `${a.url}${index}`,
-								})}
 								key={Math.random()}
 								alt={a.filename}
 								src={a.url}
 							/>
 						))}
 
+						{attachment && (
+							<Image
+								onClick={() => {
+									dispatch(setIsOneClicked(undefined));
+								}}
+								className={cn({
+									[styles.imgClicked]: attachment,
+								})}
+								key={Math.random()}
+								alt={attachment.filename}
+								src={attachment.url}
+							/>
+						)}
+
 						<button
-							onClick={() => dispatch(setIsOneClicked(0))}
+							onClick={() => dispatch(setIsOneClicked(undefined))}
 							className={cn(styles.bg, {
-								[styles.bgClicked]: isOneClicked,
+								[styles.bgClicked]: attachment,
 							})}
 						/>
 

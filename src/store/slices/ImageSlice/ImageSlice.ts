@@ -1,19 +1,23 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Attachment } from '../../../interfaces';
 
 export interface IUserState {
-	isOneClicked: string | 0;
+	attachment: Attachment | undefined;
 }
 
 export const initialState: IUserState = {
-	isOneClicked: 0,
+	attachment: undefined,
 };
 
 export const imageSlice = createSlice({
 	name: 'image',
 	initialState,
 	reducers: {
-		setIsOneClicked: (state, action: PayloadAction<string | 0>) => {
-			state.isOneClicked = action.payload;
+		setIsOneClicked: (
+			state,
+			action: PayloadAction<Attachment | undefined>
+		) => {
+			state.attachment = action.payload;
 		},
 	},
 });
