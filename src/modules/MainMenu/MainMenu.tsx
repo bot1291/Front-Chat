@@ -45,7 +45,10 @@ export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
 							className={cn({
 								[styles.chosen]: currentDialog.id === d.id,
 							})}
-							{...d}
+							avatar={d.avatar}
+							name={d.name}
+							lastMes={d.lastMes}
+							dateLastMes={d.dateLastMes}
 						/>
 					))}
 			</div>

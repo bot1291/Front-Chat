@@ -43,7 +43,11 @@ export const Dialog: FC<DialogProps> = ({
 						{getSlicedString(name, 10)}
 					</span>
 					<span className={styles.lastMes}>
-						{lastMes && getSlicedString(lastMes, 20)}
+						{lastMes ? (
+							getSlicedString(lastMes, 20)
+						) : (
+							<span className={styles.empty}>empty</span>
+						)}
 					</span>
 				</div>
 				<span className={styles.date}>

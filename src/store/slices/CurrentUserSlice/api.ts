@@ -15,11 +15,75 @@ export const getUser = (): Promise<IUser> => {
 					id: '11',
 					name: 'Artem_xx_XX$NaGiBaToR$XX_XX',
 					avatar: { img: '', color: 'orange' },
-					lastMes: 'Let us go walk today',
+					lastMes: 'Let us go walk todaysssss',
 					dateLastMes: 'Thu Jan 24 2023 20:39:11 GMT+0300',
 					messages: [
 						{
-							id: '114',
+							id: '124',
+							his: true,
+							date: 'Thu Jan 18 2021 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'Two years ago',
+						},
+						{
+							id: '129',
+							his: true,
+							date: 'Thu Jan 18 2023 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'How do you do How do you do How do you do How do you doHow do you do How do you do How do you do How do you do',
+						},
+						{
+							id: '128',
+							his: true,
+							date: 'Thu Jan 18 2023 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'How do you do How do you do How do you do How do you doHow do you do How do you do How do you do How do you do',
+						},
+						{
+							id: '125',
+							his: true,
+							date: 'Thu Jan 18 2023 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'How do you do How do you do How do you do How do you doHow do you do How do you do How do you do How do you do',
+						},
+						{
+							id: '126',
+							his: true,
+							date: 'Thu Jan 24 2023 20:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'Let us go walk today',
+						},
+						{
+							id: '118',
+							his: true,
+							date: 'Thu Jan 18 2021 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'Two years ago',
+						},
+						{
+							id: '121',
+							his: true,
+							date: 'Thu Jan 18 2023 21:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'Hi',
+						},
+						{
+							id: '122',
+							his: true,
+							date: 'Thu Jan 24 2023 20:39:11 GMT+0300',
+							smile: undefined,
+							isTyping: false,
+							text: 'Let us go walk today',
+						},
+						{
+							id: '123',
 							his: true,
 							date: 'Thu Jan 18 2021 21:39:11 GMT+0300',
 							smile: undefined,
@@ -40,7 +104,7 @@ export const getUser = (): Promise<IUser> => {
 							date: 'Thu Jan 24 2023 20:39:11 GMT+0300',
 							smile: undefined,
 							isTyping: false,
-							text: 'Let us go walk today',
+							text: 'Let us go walk todaysssss',
 						},
 						{
 							id: '115',
@@ -161,6 +225,78 @@ export const getUser = (): Promise<IUser> => {
 							text: 'Hi',
 						},
 					],
+				},
+				{
+					id: '14',
+					name: 'Ivan',
+					avatar: {
+						img: '',
+						color: 'green',
+					},
+				},
+				{
+					id: '15',
+					name: 'Artem',
+					avatar: {
+						img: '',
+						color: 'yellow',
+					},
+				},
+				{
+					id: '16',
+					name: 'Liza',
+					avatar: {
+						img: '',
+						color: 'brown',
+					},
+				},
+				{
+					id: '17',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
+				},
+				{
+					id: '18',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
+				},
+				{
+					id: '19',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
+				},
+				{
+					id: '20',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
+				},
+				{
+					id: '21',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
+				},
+				{
+					id: '22',
+					name: 'Kostya',
+					avatar: {
+						img: '',
+						color: 'gray',
+					},
 				},
 			],
 		};
