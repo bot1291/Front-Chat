@@ -1,6 +1,5 @@
-import { IDialogs } from '../../interfaces/IDialogs';
 
-export const dialogs: IDialogs[] = [
+export const dialogs = [
 	{
 		his: true,
 		date: 'Thu Jan 19 2023 21:39:11 GMT+0300',

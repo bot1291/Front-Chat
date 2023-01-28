@@ -1,9 +1,10 @@
 import { Attachment } from '.';
 
-export interface IDialogs {
+export interface IMessage {
+	id: string;
 	his: boolean;
 	date: string;
-	isReaded: boolean;
+	isReaded?: boolean;
 	isTyping: boolean;
 	smile?: string;
 	attachments?: Attachment[];

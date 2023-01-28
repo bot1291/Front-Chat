@@ -10,32 +10,33 @@ import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setTheme } from '../../store/slices/ThemeSlice/ThemeSlice';
 
 export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
-	const avatar = { img: '', color: 'yellow' };
-	const name = 'Igor';
 	const { theme } = useAppSelector((state) => state.themeReducer);
 	const dispatch = useAppDispatch();
+	const { user } = useAppSelector((state) => state.currentUserReducer);
 
 	return (
 		<div className={cn(className, styles.Settings)} {...props}>
 			<div className={styles.user}>
 				<div
 					style={{
-						backgroundColor: avatar.img ? undefined : avatar.color,
+						backgroundColor: Object.keys(user).length
+							? user.avatar.color
+							: undefined,
 					}}
 					className={styles.avatarWrapper}>
-					{avatar.img ? (
+					{Object.keys(user).length && user.avatar.img ? (
 						<img
-							src={avatar.img}
+							src={user.avatar.img}
 							alt="Avatar"
 							className={styles.avatar}
 						/>
 					) : (
 						<span className={styles.firstLetter}>
-							{name[0]?.toUpperCase()}
+							{user.name && user.name[0]?.toUpperCase()}
 						</span>
 					)}
 				</div>
-				<span>{name}</span>
+				<span>{user.name}</span>
 			</div>
 			<div className={styles.allSettings}>
 				<Setting

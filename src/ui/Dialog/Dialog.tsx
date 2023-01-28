@@ -9,19 +9,15 @@ import { getDate } from '../../utils';
 export const Dialog: FC<DialogProps> = ({
 	avatar,
 	lastMes,
-	name = 'Name',
-	date,
+	name,
+	dateLastMes,
 	className,
 	...props
 }) => {
 	const [isChosen, setIsChosen] = useState<boolean>(false);
 
 	return (
-		<div
-			className={cn(className, styles.dialog, {
-				[styles.chosen]: isChosen,
-			})}
-			{...props}>
+		<div className={cn(className, styles.dialog)} {...props}>
 			<Button
 				onClick={() => setIsChosen(!isChosen)}
 				className={styles.button}>
@@ -47,10 +43,12 @@ export const Dialog: FC<DialogProps> = ({
 						{getSlicedString(name, 10)}
 					</span>
 					<span className={styles.lastMes}>
-						{getSlicedString(lastMes, 15)}
+						{lastMes && getSlicedString(lastMes, 20)}
 					</span>
 				</div>
-				<span className={styles.date}>{getDate(date, true)}</span>
+				<span className={styles.date}>
+					{dateLastMes && getDate(dateLastMes, true)}
+				</span>
 			</Button>
 		</div>
 	);

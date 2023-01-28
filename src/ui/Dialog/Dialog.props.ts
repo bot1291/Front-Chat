@@ -5,6 +5,6 @@ export interface DialogProps
 	extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> {
 	name: string;
 	avatar: IAvatar;
-	lastMes: string;
-	date: string;
+	lastMes?: string;
+	dateLastMes?: string;
 }

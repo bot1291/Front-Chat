@@ -3,6 +3,7 @@ import testReducer from './slices/TestSlice/TestSlice';
 import registrReducer from './slices/RegistrSlice/RegistrSlice';
 import themeReducer from './slices/ThemeSlice/ThemeSlice';
 import imageReducer from './slices/ImageSlice/ImageSlice';
+import currentUserReducer from './slices/CurrentUserSlice/CurrentUserSlice';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const createReduxStore = (initialState = {}) => {
@@ -12,6 +13,7 @@ export const createReduxStore = (initialState = {}) => {
 			testReducer,
 			themeReducer,
 			imageReducer,
+			currentUserReducer,
 		},
 		preloadedState: initialState,
 	});

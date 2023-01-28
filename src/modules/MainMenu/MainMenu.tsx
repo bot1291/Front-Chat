@@ -3,11 +3,16 @@ import { MainMenuProps } from './MainMenu.props';
 import cn from 'classnames';
 import { FC, useState } from 'react';
 import { Settings } from '../../components';
-import { dialogs } from './data';
 import { Dialog, Hamburger, Search } from '../../ui';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { setCurrentDialog } from '../../store/slices/CurrentUserSlice/CurrentUserSlice';
 
 export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
 	const [isOpened, setIsOpened] = useState<boolean>(false);
+	const { user, currentDialog } = useAppSelector(
+		(state) => state.currentUserReducer
+	);
+	const dispatch = useAppDispatch();
 
 	return (
 		<div className={cn(className, styles.MainMenu)} {...props}>
@@ -27,9 +32,22 @@ export const MainMenu: FC<MainMenuProps> = ({ className, ...props }) => {
 				<Search className={styles.search} />
 			</div>
 			<div className={styles.dialogs}>
-				{dialogs.map((d) => (
-					<Dialog key={Math.random()} {...d} />
-				))}
+				{user.dialogs &&
+					user.dialogs.map((d) => (
+						<Dialog
+							onClick={() => {
+								if (currentDialog.id === d.id)
+									dispatch(setCurrentDialog({}));
+								if (currentDialog.id !== d.id)
+									dispatch(setCurrentDialog(d));
+							}}
+							key={d.id}
+							className={cn({
+								[styles.chosen]: currentDialog.id === d.id,
+							})}
+							{...d}
+						/>
+					))}
 			</div>
 		</div>
 	);

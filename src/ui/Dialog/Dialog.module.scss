@@ -25,6 +25,14 @@
 		padding: 8px 10px;
 		cursor: pointer;
 	}
+
+	.lastMes {
+		color: var(--text-main);
+	}
+
+	.date {
+		color: var(--text-main);
+	}
 }
 
 .avatarWrapper {
@@ -73,20 +81,4 @@
 	position: absolute;
 	right: 0;
 	margin-right: 10px;
-}
-
-.chosen {
-	background-color: var(--active);
-
-	&:hover {
-		background-color: var(--active);
-	}
-
-	.lastMes {
-		color: var(--text-main);
-	}
-
-	.date {
-		color: var(--text-main);
-	}
 }

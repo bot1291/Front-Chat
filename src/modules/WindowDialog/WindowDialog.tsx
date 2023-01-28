@@ -3,14 +3,17 @@ import { WindowDialogProps } from './WindowDialog.props';
 import cn from 'classnames';
 import { FC, useEffect, useRef } from 'react';
 import { Interactions, Message } from '../../components';
-import { dialogs } from './data';
 import { TopLine } from '../../ui';
 import ScrollToBottom from 'react-scroll-to-bottom';
+import { useAppSelector } from '../../hooks/redux';
 
 export const WindowDialog: FC<WindowDialogProps> = ({
 	className,
 	...props
 }) => {
+	const { currentDialog } = useAppSelector(
+		(state) => state.currentUserReducer
+	);
 	const bottomDiv: React.MutableRefObject<HTMLDivElement | null> =
 		useRef(null);
 
@@ -26,10 +29,11 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 			<ScrollToBottom
 				initialScrollBehavior="auto"
 				className={styles.dialogs}>
-				{dialogs &&
-					dialogs.map((d) => (
+				{currentDialog.messages &&
+					currentDialog.messages.length &&
+					currentDialog.messages.map((d) => (
 						<Message
-							key={Math.random()}
+							key={d.id}
 							className={d.his ? styles.his : styles.your}
 							{...d}>
 							{d.text}
