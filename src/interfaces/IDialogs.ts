@@ -1,4 +1,4 @@
-import { Attachments } from '.';
+import { Attachment } from '.';
 
 export interface IDialogs {
 	his: boolean;
@@ -6,6 +6,6 @@ export interface IDialogs {
 	isReaded: boolean;
 	isTyping: boolean;
 	smile?: string;
-	attachments?: Attachments[];
+	attachments?: Attachment[];
 	text?: string;
 }
