@@ -19,29 +19,43 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 
 	useEffect(() => {
 		bottomDiv.current?.addEventListener('resize', () => {
-			bottomDiv.current?.scrollIntoView();
+			bottomDiv.current?.scrollIntoView({ behavior: 'auto' });
 		});
 	}, [bottomDiv]);
 
+	const isCurrentDiaglosChosen = Object.keys(currentDialog).length;
+
 	return (
-		<div className={cn(className, styles.WindowDialog)} {...props}>
-			<TopLine />
-			<ScrollToBottom
-				initialScrollBehavior="auto"
-				className={styles.dialogs}>
-				{currentDialog.messages &&
-					currentDialog.messages.length &&
-					currentDialog.messages.map((d) => (
-						<Message
-							key={d.id}
-							className={d.his ? styles.his : styles.your}
-							{...d}>
-							{d.text}
-						</Message>
-					))}
-				<div ref={bottomDiv} />
-			</ScrollToBottom>
-			<Interactions />
+		<div
+			className={cn(className, styles.WindowDialog, {
+				[styles.centered]: !isCurrentDiaglosChosen,
+			})}
+			{...props}>
+			{isCurrentDiaglosChosen ? (
+				<>
+					<TopLine />
+					<ScrollToBottom
+						initialScrollBehavior="auto"
+						className={styles.dialogs}>
+						{currentDialog.messages &&
+							currentDialog.messages.length &&
+							currentDialog.messages.map((d) => (
+								<Message
+									key={d.id}
+									className={d.his ? styles.his : styles.your}
+									{...d}>
+									{d.text}
+								</Message>
+							))}
+						<div ref={bottomDiv} />
+					</ScrollToBottom>
+					<Interactions />
+				</>
+			) : (
+				<p className={styles.select}>
+					Выберите, кому хотели бы написать
+				</p>
+			)}
 		</div>
 	);
 };

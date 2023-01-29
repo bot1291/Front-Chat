@@ -11,18 +11,19 @@ export const TopLine: FC<TopLineProps> = ({ className, ...props }) => {
 		(state) => state.currentUserReducer
 	);
 
+	const isCurrentDiaglosChosen = Object.keys(currentDialog).length;
+
 	return (
 		<div className={cn(className, styles.TopLine)} {...props}>
 			<div className={styles.user}>
 				<div
 					style={{
-						backgroundColor: Object.keys(currentDialog).length
+						backgroundColor: isCurrentDiaglosChosen
 							? currentDialog.avatar.color
 							: undefined,
 					}}
 					className={styles.avatarWrapper}>
-					{Object.keys(currentDialog).length &&
-					currentDialog.avatar.img ? (
+					{isCurrentDiaglosChosen && currentDialog.avatar.img ? (
 						<img
 							src={currentDialog.avatar.img}
 							alt="Avatar"

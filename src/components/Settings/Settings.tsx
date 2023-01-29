@@ -14,17 +14,19 @@ export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 	const dispatch = useAppDispatch();
 	const { user } = useAppSelector((state) => state.currentUserReducer);
 
+	const isUserExist = Object.keys(user).length;
+
 	return (
 		<div className={cn(className, styles.Settings)} {...props}>
 			<div className={styles.user}>
 				<div
 					style={{
-						backgroundColor: Object.keys(user).length
+						backgroundColor: isUserExist
 							? user.avatar.color
 							: undefined,
 					}}
 					className={styles.avatarWrapper}>
-					{Object.keys(user).length && user.avatar.img ? (
+					{isUserExist && user.avatar.img ? (
 						<img
 							src={user.avatar.img}
 							alt="Avatar"

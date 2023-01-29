@@ -16,10 +16,6 @@
 	}
 }
 
-.unseen {
-	display: none;
-}
-
 .clicked {
 	position: unset;
 }
@@ -117,6 +113,10 @@ img.imgClicked {
 	flex-wrap: wrap;
 	gap: 6px;
 	padding-bottom: 5px;
+
+	.unseen {
+		display: none;
+	}
 }
 
 .unset {

@@ -50,6 +50,18 @@ export const Message: FC<MessageProps> = ({
 
 						{!children && date && (
 							<DateBlock
+								style={{
+									cursor:
+										attachments.length === 1
+											? 'pointer'
+											: undefined,
+								}}
+								onClick={() => {
+									attachments.length === 1 &&
+										dispatch(
+											setIsOneClicked(attachments[0])
+										);
+								}}
 								className={cn(styles.onlyPicDate, {
 									[styles.unseen]: attachment,
 								})}

@@ -18,6 +18,11 @@
 	}
 }
 
+.centered {
+	align-items: center;
+	justify-content: center;
+}
+
 .dialogs {
 	margin: auto 0 0 8px;
 	overflow: hidden;
@@ -54,4 +59,10 @@
 
 .your {
 	align-self: flex-end;
+}
+
+.select {
+	background-color: var(--add);
+	padding: 6px 15px;
+	border-radius: 20px;
 }
