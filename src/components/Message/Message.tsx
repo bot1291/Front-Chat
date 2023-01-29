@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 import { DateBlock, Image } from '../../ui';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
-import { setIsOneClicked } from '../../store/slices/ImageSlice/ImageSlice';
+import { setIsOneClicked } from '../../store/slices/clickedItemSlice/clickedItemSlice';
 
 export const Message: FC<MessageProps> = ({
 	his,
@@ -17,7 +17,7 @@ export const Message: FC<MessageProps> = ({
 	className,
 	...props
 }) => {
-	const { attachment } = useAppSelector((state) => state.imageReducer);
+	const { clickedItem } = useAppSelector((state) => state.clickedItemReducer);
 	const dispatch = useAppDispatch();
 
 	return (
@@ -30,7 +30,7 @@ export const Message: FC<MessageProps> = ({
 
 			<div
 				className={cn(styles.message, his ? styles.his : styles.your, {
-					[styles.clicked]: attachment,
+					[styles.clicked]: clickedItem,
 				})}>
 				{attachments && (
 					<div
@@ -42,7 +42,7 @@ export const Message: FC<MessageProps> = ({
 								onClick={() => {
 									dispatch(setIsOneClicked(a));
 								}}
-								key={Math.random()}
+								key={a.id}
 								alt={a.filename}
 								src={a.url}
 							/>
@@ -63,7 +63,7 @@ export const Message: FC<MessageProps> = ({
 										);
 								}}
 								className={cn(styles.onlyPicDate, {
-									[styles.unseen]: attachment,
+									[styles.unseen]: clickedItem,
 								})}
 								date={date}
 								his={his}
@@ -73,26 +73,6 @@ export const Message: FC<MessageProps> = ({
 						)}
 					</div>
 				)}
-
-				{attachment && (
-					<Image
-						onClick={() => {
-							dispatch(setIsOneClicked(undefined));
-						}}
-						className={cn({
-							[styles.imgClicked]: attachment,
-						})}
-						alt={attachment.filename}
-						src={attachment.url}
-					/>
-				)}
-
-				<button
-					onClick={() => dispatch(setIsOneClicked(undefined))}
-					className={cn(styles.bg, {
-						[styles.bgClicked]: attachment,
-					})}
-				/>
 
 				{isTyping ? (
 					<div className={cn(styles.typingContent)}>

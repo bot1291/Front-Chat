@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+*.itemClicked {
+	z-index: 424242;
+	position: absolute;
+	max-height: unset;
+	max-width: unset;
+	min-width: unset;
+	min-height: unset;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
