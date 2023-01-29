@@ -16,6 +16,10 @@
 	}
 }
 
+.unseen {
+	display: none;
+}
+
 .clicked {
 	position: unset;
 }
@@ -45,7 +49,7 @@ img.imgClicked {
 .bgClicked {
 	z-index: 424241;
 	opacity: 1;
-	background-color: rgba(var(--main-rgb), 0.45);
+	background-color: rgba(var(--main-rgb), 0.095);
 }
 
 .his {

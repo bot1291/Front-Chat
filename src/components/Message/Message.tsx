@@ -2,8 +2,7 @@ import styles from './Message.module.scss';
 import { MessageProps } from './Message.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import { getDateBlock } from './helpers/getDateBlock';
-import { Image } from '../../ui';
+import { DateBlock, Image } from '../../ui';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setIsOneClicked } from '../../store/slices/ImageSlice/ImageSlice';
 
@@ -49,31 +48,39 @@ export const Message: FC<MessageProps> = ({
 							/>
 						))}
 
-						{attachment && (
-							<Image
-								onClick={() => {
-									dispatch(setIsOneClicked(undefined));
-								}}
-								className={cn({
-									[styles.imgClicked]: attachment,
+						{!children && date && (
+							<DateBlock
+								className={cn(styles.onlyPicDate, {
+									[styles.unseen]: attachment,
 								})}
-								alt={attachment.filename}
-								src={attachment.url}
-							/>
+								date={date}
+								his={his}
+								isReaded={isReaded}>
+								{children}
+							</DateBlock>
 						)}
-
-						<button
-							onClick={() => dispatch(setIsOneClicked(undefined))}
-							className={cn(styles.bg, {
-								[styles.bgClicked]: attachment,
-							})}
-						/>
-
-						{!children &&
-							date &&
-							getDateBlock(date, children, his, isReaded)}
 					</div>
 				)}
+
+				{attachment && (
+					<Image
+						onClick={() => {
+							dispatch(setIsOneClicked(undefined));
+						}}
+						className={cn({
+							[styles.imgClicked]: attachment,
+						})}
+						alt={attachment.filename}
+						src={attachment.url}
+					/>
+				)}
+
+				<button
+					onClick={() => dispatch(setIsOneClicked(undefined))}
+					className={cn(styles.bg, {
+						[styles.bgClicked]: attachment,
+					})}
+				/>
 
 				{isTyping ? (
 					<div className={cn(styles.typingContent)}>
@@ -85,8 +92,14 @@ export const Message: FC<MessageProps> = ({
 					children && (
 						<div className={styles.content}>
 							<span>{children}</span>
-							{date &&
-								getDateBlock(date, children, his, isReaded)}
+							{date && (
+								<DateBlock
+									date={date}
+									his={his}
+									isReaded={isReaded}>
+									{children}
+								</DateBlock>
+							)}
 						</div>
 					)
 				)}

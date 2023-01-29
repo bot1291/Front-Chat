@@ -1,0 +1,55 @@
+@import '../../styles/variables';
+
+.date {
+	margin-left: 10px;
+	color: var(--text-add);
+	font-size: 14px;
+	float: right;
+	position: relative;
+}
+
+.hisDate {
+	margin-right: 5px;
+}
+
+.onlyPicDate {
+	position: absolute;
+	bottom: 5px;
+	right: 8px;
+	opacity: 0;
+	background-color: rgba($color: gray, $alpha: 0.5);
+	padding: 3px 10px;
+	border-radius: 10px;
+	color: $white;
+	transition: all 0.2s;
+	font-size: 14px;
+
+	span {
+		margin-left: unset;
+		color: $white;
+		font-size: 14px;
+	}
+
+	path {
+		fill: $white;
+	}
+}
+
+.dateBlock {
+	display: flex;
+	float: right;
+	align-items: center;
+
+	path {
+		fill: var(--text-main);
+	}
+}
+
+.yourDate {
+	margin-right: 8px;
+}
+
+.icon {
+	width: 15px;
+	height: 8px;
+}
