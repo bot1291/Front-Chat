@@ -124,6 +124,7 @@ export const getUser = (): Promise<IUser> => {
 							isTyping: false,
 							attachments: [
 								{
+									id: '4445',
 									filename: 'namefile',
 									url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
 								},
@@ -138,10 +139,12 @@ export const getUser = (): Promise<IUser> => {
 							isTyping: false,
 							attachments: [
 								{
+									id: '4446',
 									filename: 'namefile',
 									url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
 								},
 								{
+									id: '4447',
 									filename: 'namefile',
 									url: 'https://images.unsplash.com/photo-1661956602868-6ae368943878?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=100',
 								},

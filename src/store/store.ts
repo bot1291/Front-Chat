@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import testReducer from './slices/TestSlice/TestSlice';
 import registrReducer from './slices/RegistrSlice/RegistrSlice';
 import themeReducer from './slices/ThemeSlice/ThemeSlice';
-import imageReducer from './slices/ImageSlice/ImageSlice';
+import clickedItemReducer from './slices/clickedItemSlice/clickedItemSlice';
 import currentUserReducer from './slices/CurrentUserSlice/CurrentUserSlice';
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
@@ -12,10 +12,14 @@ export const createReduxStore = (initialState = {}) => {
 			registrReducer,
 			testReducer,
 			themeReducer,
-			imageReducer,
+			clickedItemReducer,
 			currentUserReducer,
 		},
 		preloadedState: initialState,
+		middleware: (getDefaultMiddleware) =>
+			getDefaultMiddleware({
+				serializableCheck: false,
+			}),
 	});
 };
 
