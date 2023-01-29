@@ -18,10 +18,13 @@
 		align-items: center;
 		transition: all 0.5s;
 		align-self: center;
+		color: var(--text-add);
+		border-color: unset;
 
 		span {
+			color: var(--text-add);
 			margin-left: 5px;
-			color: var(--text-main);
+			transition: color 0.5s;
 		}
 
 		padding: 0 40px;
@@ -33,6 +36,9 @@
 			border-color: var(--active);
 		}
 		&:hover {
+			span {
+				color: var(--text-main);
+			}
 			color: var(--text-main);
 			border-color: var(--text-main);
 		}
