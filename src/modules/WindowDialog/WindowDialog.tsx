@@ -3,12 +3,10 @@ import { WindowDialogProps } from './WindowDialog.props';
 import cn from 'classnames';
 import { FC, useEffect, useRef, useState } from 'react';
 import { Interactions, Message } from '../../components';
-import { Setting, TopLine, Image } from '../../ui';
+import { TopLine } from '../../ui';
 import ScrollToBottom from 'react-scroll-to-bottom';
 import { useAppSelector } from '../../hooks/redux';
 import ArrowIcon from './arrow.svg';
-import { ClickedItemWindow } from '../../components/ClickedItemWindow/ClickedItemWindow';
-
 export const WindowDialog: FC<WindowDialogProps> = ({
 	className,
 	...props
@@ -22,7 +20,6 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 	const [isHintVisible, setIsHintVisible] = useState<boolean>(
 		localStorage.isHintVisible ? false : true
 	);
-	const { clickedItem } = useAppSelector((state) => state.clickedItemReducer);
 
 	useEffect(() => {
 		bottomDiv.current?.addEventListener('resize', () => {
@@ -77,23 +74,6 @@ export const WindowDialog: FC<WindowDialogProps> = ({
 					</p>
 				)}
 			</div>
-
-			{clickedItem && 'filename' in clickedItem && (
-				<ClickedItemWindow
-					Component={Image}
-					alt={clickedItem.filename}
-					src={clickedItem.url}
-				/>
-			)}
-
-			{clickedItem && 'icon' in clickedItem && (
-				<ClickedItemWindow
-					Component={Setting}
-					color={clickedItem.color}
-					name={clickedItem.name}
-					icon={clickedItem.icon}
-				/>
-			)}
 		</>
 	);
 };

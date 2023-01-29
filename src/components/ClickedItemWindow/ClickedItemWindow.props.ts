@@ -4,4 +4,5 @@ import { FC } from 'react';
 
 export interface ClickedItemWindowProps extends Record<string, any> {
 	Component: FC<any>;
+	isLeftAnimation?: boolean;
 }

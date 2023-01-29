@@ -1,8 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { Attachment } from '../../../interfaces';
-import { ISetting } from '../../../interfaces/ISetting';
+import { TypeClickedItem } from '../../../interfaces/TypeClickedItem';
 
-type TypeClickedItem = Attachment | ISetting | undefined;
+// used in WindowDialog
 
 export interface IUserState {
 	clickedItem: TypeClickedItem;
