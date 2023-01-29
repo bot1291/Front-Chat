@@ -7,5 +7,5 @@ export interface SettingProps
 	> {
 	icon: JSX.Element;
 	color: string;
-	string: string;
+	name: string;
 }

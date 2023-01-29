@@ -2,12 +2,12 @@ import styles from './Settings.module.scss';
 import { SettingsProps } from './Settings.props';
 import cn from 'classnames';
 import { FC } from 'react';
-import CloudIcon from './cloud.svg';
 import { Setting } from '../../ui';
 import { Switch } from 'antd';
 import './Settings.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { setTheme } from '../../store/slices/ThemeSlice/ThemeSlice';
+import { settingsData } from './settingsData';
 
 export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 	const { theme } = useAppSelector((state) => state.themeReducer);
@@ -41,16 +41,10 @@ export const Settings: FC<SettingsProps> = ({ className, ...props }) => {
 				<span>{user.name}</span>
 			</div>
 			<div className={styles.allSettings}>
-				<Setting
-					icon={<CloudIcon />}
-					color={'green'}
-					string={'Палитра'}
-				/>
-				<Setting
-					icon={<CloudIcon />}
-					color={'#4DC54D'}
-					string={'Палитра'}
-				/>
+				{settingsData.map((s) => (
+					<Setting key={s.id} {...s} />
+				))}
+
 				<div className={styles.blackOn}>
 					<Switch
 						className={styles.button}

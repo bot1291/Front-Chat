@@ -65,4 +65,30 @@
 	background-color: var(--add);
 	padding: 6px 15px;
 	border-radius: 20px;
+	position: absolute;
+}
+
+.hint {
+	position: absolute;
+	top: -73px;
+	right: 50%;
+	text-align: center;
+	transform: translate(50%, 0);
+	display: flex;
+	opacity: 1;
+	transition: all 0.5s;
+}
+
+.arrow {
+	max-width: 35px;
+	max-height: 35px;
+	fill: red;
+	transform: scale(-1, 1) rotate(65deg);
+	position: relative;
+	top: -18px;
+	right: 14px;
+}
+
+.visible {
+	opacity: 0;
 }

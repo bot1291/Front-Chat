@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { FC } from 'react';
 
 export const Setting: FC<SettingProps> = ({
-	string,
+	name,
 	icon,
 	color,
 	className,
@@ -15,7 +15,7 @@ export const Setting: FC<SettingProps> = ({
 			<div style={{ backgroundColor: color }} className={styles.icon}>
 				{icon}
 			</div>
-			<span>{string}</span>
+			<span>{name}</span>
 		</button>
 	);
 };
