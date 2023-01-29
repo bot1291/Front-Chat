@@ -1,0 +1,17 @@
+@import '../../styles/variables';
+
+.bg {
+	width: 100vw;
+	position: absolute;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	z-index: -424242;
+	opacity: 0;
+}
+
+.bgClicked {
+	z-index: 424241;
+	opacity: 1;
+	background-color: rgba(var(--main-rgb), 0.45);
+}
