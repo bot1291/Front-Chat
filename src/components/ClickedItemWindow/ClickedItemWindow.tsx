@@ -33,9 +33,9 @@ export const ClickedItemWindow: FC<ClickedItemWindowProps> = ({
 	return (
 		<motion.div
 			style={{ display: 'none' }}
-			initial={isLeftAnimation && { left: '60vw' }}
+			initial={{ left: isLeftAnimation ? '60vw' : undefined }}
 			animate={clickedItem ? show : hide}
-			transition={{ duration: 0.4 }}
+			transition={{ duration: isLeftAnimation ? 0.4 : 0.2 }}
 			onClick={() => dispatch(setIsOneClicked(undefined))}
 			className={cn(className, {
 				[styles.itemClicked]: clickedItem,
