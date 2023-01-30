@@ -6,14 +6,14 @@
 	--green: #61d46c;
 	--white: white;
 }
-
+/*  #3d4244   #696f70*/
 :root[data-theme='default'] {
 	--main: rgb(232, 188, 188);
 	--main-rgb: 232, 188, 188;
 	--add: #ffe4e4;
-	--text-add: #696f70;
-	--text-add-darken: #3d4244;
-	--text-main: #863f3f;
+	--text-add: #3d4244;
+	--text-add-darken: #726969;
+	--text-main: #3d4244;
 	--hover: #e8bcbc;
 	--active: #b4dede;
 	--message: #dac2c2;
@@ -25,7 +25,7 @@
 	--main-rgb: 22, 21, 21;
 	--add: #202020;
 	--text-add: rgb(235, 235, 235);
-	--text-add-darken: rgb(129, 129, 129);
+	--text-add-darken: rgb(161, 161, 161);
 	--text-main: rgb(235, 235, 235);
 	--hover: #000;
 	--active: #264b8f;
