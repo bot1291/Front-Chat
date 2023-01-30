@@ -6,5 +6,7 @@ export interface TintedBgProps
 		ButtonHTMLAttributes<HTMLButtonElement>,
 		HTMLButtonElement
 	> {
-	state: TypeClickedItem;
+	state: TypeClickedItem | boolean;
+	zIndex?: number;
+	cursor?: string;
 }

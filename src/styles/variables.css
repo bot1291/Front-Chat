@@ -6,7 +6,7 @@
 	--green: #61d46c;
 	--white: white;
 }
-/*  #3d4244   #696f70*/
+
 :root[data-theme='default'] {
 	--main: rgb(232, 188, 188);
 	--main-rgb: 232, 188, 188;

@@ -18,7 +18,7 @@ export const ClickedItemWindow: FC<ClickedItemWindowProps> = ({
 	const show = {
 		opacity: 1,
 		display: 'block',
-		zIndex: 424242,
+		zIndex: 6,
 		left: '50vw',
 	};
 
